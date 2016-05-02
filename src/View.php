@@ -10,7 +10,7 @@ class View
 {
 
     /**
-     * @var PHPLegends\View\Data
+     * @var \ArrayObject
      * */
     protected $data;
 
@@ -20,20 +20,35 @@ class View
     protected $name;
 
     /**
-     * @var Section
+     * @var \PHPLegends\View\View
      * */
     protected $extendedView;
 
     /**
-     * @var PHPLegends\Legendary\SectionCollection
+     * @var \PHPLegends\View\SectionCollection
      * */
     protected $sections;
+
+    /**
+     * @var string
+     * */
+    protected static $extension = 'php';
+
+    /**
+     * @var string
+     * */
+    protected static $path;
 
     public function __construct ($name, $data = [], SectionCollection $section = null)
     {
         $this->setName($name);
 
         $this->resolveDataValue($data);
+
+        if (! file_exists($filename = $this->buildFilename()))
+        {   
+            throw new \RuntimeException("file '$filename' doesn't exists");
+        }
 
         $this->setSectionsCollection(
             $section ? $section : new SectionCollection
@@ -97,7 +112,22 @@ class View
     */
     public function getName()
     {
-        return $this->name . '.php';
+        return $this->name;
+    }
+
+    /**
+     * 
+     * */
+    public function buildFilename()
+    {
+        $filename = sprintf(
+            '%s/%s.%s',
+            static::$path, 
+            ltrim($this->getName(), '/'),
+            static::$extension
+        );
+
+        return $filename;
     }
 
     /**
@@ -112,7 +142,7 @@ class View
 
             extract($this->getData()->getArrayCopy());
 
-            require $this->getName();
+            require $this->buildFilename();
 
             if ($this->extendedView) {
 
@@ -166,23 +196,7 @@ class View
 
         $section->end();
     }
-
-    /**
-    * Appends output buffer in a existing section
-    * @return void
-    */
-    public function appendSection()
-    {
-        $section = $this->sections->last();
-
-        if (! $section) {
-
-            throw new \RuntimeException('closeSection called without start a section');
-        }
-
-        $section->append();
-    }
-
+    
     /**
     * Gives the value of a initialized section
     * @param string $name
@@ -250,6 +264,47 @@ class View
     public function __toString() 
     {
         return $this->render();
+    }
+
+    /**
+     * @param string $extension
+     * @return void
+     * */
+
+    public static function setExtension($extension)
+    {
+        static::$extension = $extension;
+    }
+
+    /**
+     * @param string $path
+     * @return void
+     * */
+
+    public static function setPath($path)
+    {
+        static::$path = $path;
+    }
+
+    /**
+     * Gets the value of extension.
+     *
+     * @return string
+     */
+    public static function getExtension()
+    {
+        return static::$extension;
+    }
+
+
+    /**
+     * Gets the value of paths.
+     *
+     * @return string
+     */
+    public static function getPath()
+    {
+        return static::$path;
     }
 
 }
