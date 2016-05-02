@@ -1,0 +1,30 @@
+{
+    "name"     : "phplegends/legendary",
+    "authors": [
+        {
+            "name": "Wallace de Souza Vizerra",
+            "email": "wallacemaxters@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Guilherme Nascimento",
+            "email": "guilherme@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "description" : "Simple Template Engine for php",
+    "require" : {
+        "php" : ">=5.4.0"
+    },
+    "require-dev": {
+        "victorjonsson/markdowndocs" : "1.2.*",
+        "phplegends/collections"     : "1.*"
+    },
+    "autoload" : {
+        "psr-4": {
+            "PHPLegends\\View\\": "src"
+        }
+    },
+
+    "license" : "MIT"
+}

@@ -1,0 +1,2432 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"PHP",
+				"PHPUnit"
+			],
+			[
+				"modal",
+				"modalInLoadProtocol"
+			],
+			[
+				"box",
+				"boxShadow"
+			],
+			[
+				"g",
+				"gulp"
+			],
+			[
+				"sol",
+				"$solicitacoes〔variable〕"
+			],
+			[
+				"cache",
+				"cacheEnabled"
+			],
+			[
+				"save",
+				"saveCompiled"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"parse",
+				"parseInt〔function〕"
+			],
+			[
+				"iterator",
+				"iterator_to_array"
+			],
+			[
+				"statu",
+				"statusID"
+			],
+			[
+				"o",
+				"fromInputOptions〔variable〕"
+			],
+			[
+				"int",
+				"inputs"
+			],
+			[
+				"colu",
+				"$column〔variable〕"
+			],
+			[
+				"get_class",
+				"get_class_vars"
+			],
+			[
+				"creat",
+				"created_at"
+			],
+			[
+				"has",
+				"$hasException〔variable〕"
+			],
+			[
+				"get",
+				"getGetterName〔function〕"
+			],
+			[
+				"prop",
+				"$property〔variable〕"
+			],
+			[
+				"class",
+				"$classFile〔variable〕"
+			],
+			[
+				"Un",
+				"UnexpectedValueException"
+			],
+			[
+				"p",
+				"$propertyName〔variable〕"
+			],
+			[
+				"Reflect",
+				"ReflectionClass"
+			],
+			[
+				"pro",
+				"$property〔variable〕"
+			],
+			[
+				"sub",
+				"$subexpression〔variable〕"
+			],
+			[
+				"null",
+				"null_coalesce"
+			],
+			[
+				"max-",
+				"max-width: 〔property〕"
+			],
+			[
+				"set",
+				"setExpression〔function〕"
+			],
+			[
+				"file",
+				"$fileOutput〔variable〕"
+			],
+			[
+				"sys_ge",
+				"sys_get_temp_dir〔function〕"
+			],
+			[
+				"php",
+				"$phpExt〔variable〕"
+			],
+			[
+				"pa",
+				"$parsedViewName〔variable〕"
+			],
+			[
+				"para",
+				"parseNamespace"
+			],
+			[
+				"names",
+				"namespaces"
+			],
+			[
+				"N",
+				"NAMESPACE_SEPARATOR"
+			],
+			[
+				"solici",
+				"$solicitacao〔variable〕"
+			],
+			[
+				"soli",
+				"$solicitacao〔variable〕"
+			],
+			[
+				"s",
+				"$syntax〔variable〕"
+			],
+			[
+				"mat",
+				"$matches〔variable〕"
+			],
+			[
+				"resu",
+				"$resultado〔variable〕"
+			],
+			[
+				"in",
+				"interpolations"
+			],
+			[
+				"ed",
+				"education"
+			],
+			[
+				"get_cla",
+				"get_class_methods"
+			],
+			[
+				"create",
+				"createElement"
+			],
+			[
+				"call_user",
+				"call_user_func_array"
+			],
+			[
+				"elem",
+				"$elements〔variable〕"
+			],
+			[
+				"Dom",
+				"DomDocument"
+			],
+			[
+				"cr",
+				"cropper"
+			],
+			[
+				"forma",
+				"formatCheck"
+			],
+			[
+				"h",
+				"$hour〔variable〕"
+			],
+			[
+				"pe",
+				"$period〔variable〕"
+			],
+			[
+				"DateTime",
+				"DateTimeZone〔class〕"
+			],
+			[
+				"c",
+				"current〔function〕"
+			],
+			[
+				"ob_geT_le",
+				"ob_get_level〔function〕"
+			],
+			[
+				"Ara",
+				"ArrayIterator〔namespace〕"
+			],
+			[
+				"app",
+				"$appendIterator〔variable〕"
+			],
+			[
+				"__",
+				"__construct"
+			],
+			[
+				"Ite",
+				"Itertools"
+			],
+			[
+				"Itera",
+				"Iterators"
+			],
+			[
+				"It",
+				"Iterator"
+			],
+			[
+				"repe",
+				"repetitions"
+			],
+			[
+				"auth",
+				"authData"
+			],
+			[
+				"google",
+				"google_get_contacts"
+			],
+			[
+				"memory_ge",
+				"memory_get_peak_usage"
+			],
+			[
+				"date",
+				"datetime	class"
+			],
+			[
+				"threa",
+				"threading〔module〕"
+			],
+			[
+				"iterator_",
+				"iterator_to_array〔function〕"
+			],
+			[
+				"__con",
+				"__construct〔function〕"
+			],
+			[
+				"Wallace",
+				"WallaceMaxters\\Itertools\\Range〔class〕"
+			],
+			[
+				"I",
+				"Itertools"
+			],
+			[
+				"array",
+				"array_some〔function〕"
+			],
+			[
+				"Wa",
+				"WallaceMaxters〔namespace〕"
+			],
+			[
+				"Iter",
+				"Iterator"
+			],
+			[
+				"call",
+				"$callbacks〔variable〕"
+			],
+			[
+				"callab",
+				"callables"
+			],
+			[
+				"Arra",
+				"ArrayIterator〔namespace〕"
+			],
+			[
+				"grp",
+				"group_key"
+			],
+			[
+				"grou",
+				"$group_key〔variable〕"
+			],
+			[
+				"Array",
+				"ArrayAccess〔namespace〕"
+			],
+			[
+				"gr",
+				"groups"
+			],
+			[
+				"var",
+				"var_dump〔function〕"
+			],
+			[
+				"Iterator",
+				"IteratorAggregate〔interface〕"
+			],
+			[
+				"Iterat",
+				"IteratorIterator〔namespace〕"
+			],
+			[
+				"R",
+				"Range〔class〕"
+			],
+			[
+				"gro",
+				"group_key"
+			],
+			[
+				"itera",
+				"iterator_to_array"
+			],
+			[
+				"ite",
+				"iterable"
+			],
+			[
+				"iterato",
+				"iterator_to_array〔function〕"
+			],
+			[
+				"PREG_S",
+				"PREG_SPLIT_NO_EMPTY〔constant〕"
+			],
+			[
+				"Range",
+				"RangePairs〔class〕"
+			],
+			[
+				"hi",
+				"$hight〔variable〕"
+			],
+			[
+				"ra",
+				"range"
+			],
+			[
+				"post_",
+				"post_privacidade_id"
+			],
+			[
+				"tag",
+				"tag_p_texto	function"
+			],
+			[
+				"ajax",
+				"ajaxOptions〔variable〕"
+			],
+			[
+				"str",
+				"strCPF〔argument〕"
+			],
+			[
+				"insti",
+				"$instituicao_id〔variable〕"
+			],
+			[
+				"inst",
+				"$instituicao_id〔variable〕"
+			],
+			[
+				"Exception",
+				"ExceptionHandlerInterface"
+			],
+			[
+				"cada",
+				"cadastrar_usuario"
+			],
+			[
+				"confirma",
+				"confirma_senha"
+			],
+			[
+				"r",
+				"rgb(〔value〕"
+			],
+			[
+				"no",
+				"no-repeat〔value〕"
+			],
+			[
+				"font",
+				"font-weight: 〔property〕"
+			],
+			[
+				"font-",
+				"font-size: 〔property〕"
+			],
+			[
+				"base_",
+				"base64_encode〔function〕"
+			],
+			[
+				"base",
+				"base64_contents	statement"
+			],
+			[
+				"b",
+				"b64encode	function"
+			],
+			[
+				"empresas",
+				"empresasSugeridas"
+			],
+			[
+				"image",
+				"imageurl"
+			],
+			[
+				"brea",
+				"breakpoint"
+			],
+			[
+				"exis",
+				"$existentes〔variable〕"
+			],
+			[
+				"lista",
+				"$lista_emails〔variable〕"
+			],
+			[
+				"emai",
+				"$emails〔variable〕"
+			],
+			[
+				"ar",
+				"array_reject〔function〕"
+			],
+			[
+				"ne",
+				"$needles〔variable〕"
+			],
+			[
+				"char",
+				"charset"
+			],
+			[
+				"MB_",
+				"MB_CASE_TITLE〔constant〕"
+			],
+			[
+				"acess",
+				"access_token"
+			],
+			[
+				"access",
+				"access_token"
+			],
+			[
+				"ya",
+				"yahoo"
+			],
+			[
+				"cadastrar",
+				"cadastrar_usuario/1"
+			],
+			[
+				"yaho",
+				"yahoo_api"
+			],
+			[
+				"clien",
+				"client_id"
+			],
+			[
+				"get_",
+				"google_get_contacts"
+			],
+			[
+				"client",
+				"client_secret"
+			],
+			[
+				"str_",
+				"str_starts_with"
+			],
+			[
+				"cha",
+				"charset"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "test/ViewTest.php",
+			"settings":
+			{
+				"buffer_size": 914,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "composer.json",
+			"settings":
+			{
+				"buffer_size": 672,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "List",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"List",
+					""
+				],
+				[
+					"Packages/User/lua.sublime-build",
+					""
+				]
+			],
+			[
+				"List",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Ant Buildfile/Ant Buildfile.sublime-build",
+					""
+				],
+				[
+					"Packages/Bash Build System/Bash.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Bash Build System/Bash.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Ant Buildfile/Ant Buildfile.sublime-build",
+					""
+				],
+				[
+					"Packages/YUI Compressor/YUI Compressor.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/YUI Compressor/YUI Compressor.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					""
+				],
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/lua.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/lua.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/Ant.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				],
+				[
+					"Packages/Ant Buildfile/Ant Buildfile.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/Ant.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Markdown Preview/Markdown.sublime-build",
+					""
+				],
+				[
+					"Packages/User/lua.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Markdown Preview/Markdown.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/Ant Buildfile/Ant Buildfile.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/lua.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/SASS Build/SASS - Compressed.sublime-build",
+					""
+				],
+				[
+					"Packages/SASS Build/SASS.sublime-build",
+					""
+				],
+				[
+					"Packages/User/lua.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SASS Build/SASS.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/YUI Compressor/YUI Compressor.sublime-build",
+					""
+				],
+				[
+					"Packages/User/lua.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/YUI Compressor/YUI Compressor.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 183.0,
+		"last_filter": "php",
+		"selected_items":
+		[
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"css3",
+				"Set Syntax: CSS3"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"coffee li",
+				"Coffee: Lint"
+			],
+			[
+				"coff",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"coffee",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"reiden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"scss",
+				"Set Syntax: CSS3"
+			],
+			[
+				"install g",
+				"Package Control: Install Package"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			],
+			[
+				"gulp",
+				"Set Syntax: Gulp results"
+			],
+			[
+				"gupl",
+				"Gulp: Show panel"
+			],
+			[
+				"sas",
+				"Set Syntax: Sass"
+			],
+			[
+				"blade",
+				"Set Syntax: PHP - Laravel Blade"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"md",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"theme",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"xpath",
+				"XPath: Goto open tag"
+			],
+			[
+				"xml",
+				"Indent XML"
+			],
+			[
+				"lua",
+				"Set Syntax: Lua"
+			],
+			[
+				"new ",
+				"Build: New Build System"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reide",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"mini",
+				"Minify Javascript"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"coffe",
+				"Set Syntax: CoffeeScript (Angular.js)"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"jinj",
+				"Set Syntax: Jinja2"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"jsn",
+				"Set Syntax: JSON"
+			],
+			[
+				"yui",
+				"Build With: YUI Compressor"
+			],
+			[
+				"mi",
+				"Minify Javascript"
+			],
+			[
+				"min",
+				"Minify Javascript"
+			],
+			[
+				"hs",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"sublimep",
+				"SublimeLinter: Previous Error"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Enable Linting"
+			],
+			[
+				"sublim",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"IDENT",
+				"Indent XML"
+			],
+			[
+				"css",
+				"Set Syntax: CSS3"
+			],
+			[
+				"lint",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"jsli",
+				"Build With: JSLint"
+			],
+			[
+				"disable",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"jslin",
+				"JSLint"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime li",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"sublime en",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"sublimelinter",
+				"SublimeLinter: Clear Caches"
+			],
+			[
+				"",
+				"Build: New Build System"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"text",
+				"Set Syntax: Textile"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"h",
+				"Set Syntax: HTML"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"css3e",
+				"CSS3: Validate"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss3",
+				"Set Syntax: CSS3"
+			],
+			[
+				"CSS3",
+				"Set Syntax: CSS3"
+			],
+			[
+				"undes",
+				"Set Syntax: HTML (Underscore)"
+			],
+			[
+				"gutter",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"inja",
+				"Set Syntax: HTML (Jinja Templates)"
+			],
+			[
+				"jinja",
+				"Set Syntax: HTML (Jinja Templates)"
+			],
+			[
+				"linter",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"user",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"run",
+				"Permute Lines: Unique"
+			],
+			[
+				"c3",
+				"CSS3: Validate"
+			],
+			[
+				"cs3",
+				"CSS3: Validate"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"color sche",
+				"SublimeLinter: Clear Color Scheme Folder"
+			],
+			[
+				"show all",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"limit mode",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"linter disable",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"xss3",
+				"Set Syntax: CSS3"
+			],
+			[
+				"android",
+				"Import Android Classes"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"ant",
+				"Set Syntax: Ant"
+			],
+			[
+				"jin",
+				"Set Syntax: HTML (Jinja Templates)"
+			],
+			[
+				"ini file",
+				"File: New View into File"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"jsl",
+				"JSLint"
+			],
+			[
+				"all",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"javascr",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"all err",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"error",
+				"SublimeLinter: Show Errors on Save"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"csslin",
+				"CSSLint: Run CSSLint"
+			],
+			[
+				"csslint",
+				"Preferences: CSSLint Settings – Default"
+			],
+			[
+				"build",
+				"Set Syntax: NAnt Build File"
+			],
+			[
+				"CS",
+				"Set Syntax: CSS3"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 155.0,
+		"history":
+		[
+			"b",
+			"b.strip('W')",
+			"b = \"Wallace\"",
+			"\"\\tx\".strip()",
+			"\"\\tx\"",
+			"\"asdasd asdasd asdasd as\".strip().__len__()",
+			"\"\".strip().__len__()",
+			"\"\".strip().__len__",
+			"\"\".strip().len",
+			"\"\".strip()",
+			"\" asdasdasdas \".strip()",
+			"\" asdasdasdas \".strip",
+			"\" asdasdasdas \".strio",
+			"print(dir(a))",
+			"dir(str)",
+			"str",
+			"dir(a)",
+			"trim",
+			"a.trim",
+			"a",
+			"a = \"Z\"",
+			"a = \"x\"",
+			"\"x\"·trim",
+			"''·trim",
+			"''",
+			"view.run_command('sort_lines_size')",
+			"view.run_command('sortLinesSize')",
+			"view.run_command('sortlinessize')",
+			"view.run_command('example')",
+			"filter(lambda x: x, x)",
+			"filter(lambda x: x)",
+			"filter(x, lambda x: x)",
+			"filter(x)",
+			"x.map",
+			"x",
+			"x.filter()",
+			"x = [1, 2, 3, 4, None]",
+			"view.run_command('example')",
+			"'v'.join(['1', '2', '3'])",
+			"'v'.join('x', ['1', '2', '3'])",
+			"''.join('x', ['1', '2', '3'])",
+			"','.join(['1', '2', '3'])",
+			"','.join([1, 2, 3])",
+			"','.join([1, 2,3])",
+			"dir([1, 2, 3])",
+			"[1, 2, 3].glue",
+			"[1, 2, 3].join",
+			"view.run_command('example')",
+			"view.replace()",
+			"view.replace(edit=1)",
+			"view.replace()",
+			"view.replace",
+			"print( dir(view.replace))",
+			"print( view.replace)",
+			"print( view.replace.__doc__)",
+			"print view.replace.__doc__",
+			"view.replace.__doc__",
+			"view.replace.__help__",
+			"view.__doc__",
+			"view.replace.__doc__",
+			"view.replace",
+			"view.replace.__doc__",
+			"view.replace",
+			"view.run_command('example')",
+			"a[0]",
+			"a[1]",
+			"a = (1, 2,)",
+			"view.run_command('example')",
+			"view.run_command('x')",
+			"view.run_command()",
+			"b",
+			"b.sort(key=lambda x: -len(x))",
+			"b",
+			"b.sort(key=lambda x:len(x))",
+			"b.sort(key=lambda x:len(x)",
+			"b = [\"teste\", \"x\", 'xxx']",
+			"b[\"teste\", \"x\", 'xxx']",
+			"b.sort(key=lambda x: len(str(x)))",
+			"b",
+			"b.sort(key=lambda x: len(str(x)))",
+			"b.sort(key=lambda x: len(str(x))",
+			"b.sort(key=lambda x: len(x))",
+			"b",
+			"bb",
+			"b.sort(key=lambda x: x - 1)",
+			"b",
+			"b.sort(key=lambda x: x < 5)",
+			"b",
+			"b.sort(key=lambda x: x > 5)",
+			"print(a)",
+			"a()",
+			"a",
+			"a= b.sort(key=lambda x: x > 5)",
+			"b",
+			"b.sort(key=lambda x: x > 5)",
+			"b",
+			"b.sort(key=lambda x: x-x)",
+			"b = [1, 2, 3, 5]",
+			"print(b)",
+			"b",
+			"b = [1, 2, 3, 4].sort(key=lambda x: -x)",
+			"[1, 2, 3, 4].sort(key=lambda x: -x)",
+			"[3, 2 3, 4].sort(key = lambda x:x - x)",
+			"[3, 2 3, 4].sort(key = lambda x : x - x)",
+			"[3, 2, 3, 4].sort(key= lambda x : x + x)",
+			"[3, 2, 3, 4].sort(key= lambda x:x)",
+			"[3, 2, 3, 4].sort(key= lambda -1)",
+			"[3, 2, 3, 4].sort(key=-1)",
+			"[3, 2, 3, 4].sort(key=None)",
+			"[3, 2, 3, 4].sort(key=Nome)",
+			"list.sort.__doc__",
+			"list.sort",
+			"list",
+			"[3, 2, 3, 4].sort(cmp=lambda x: x * 3 )",
+			"[3, 2, 3, 4].sort(key=lambda x: x * 3 )",
+			"[3, 2, 3, 4].sort(val=lambda x: x * 3 )",
+			"[3, 2, 3, 4].sort(key=lambda x: x )",
+			"[3, 2, 3, 4].sort(val=lambda x: x )",
+			"[3, 2, 3, 4].sort(value=lambda x: x )",
+			"[3, 2, 3, 4].sort(x=lambda x: x )",
+			"[3, 2, 3, 4].sort(key=lambda x: x > 0)",
+			"[3, 2, 3, 4].sort(key=lambda x: x)",
+			"[3, 2, 3, 4].sort(key=lambda x: 1)",
+			"[3, 2, 3, 4].sort(key=lambda x: -x)",
+			"[1, 2, 3, 4].sort(key=lambda x: -x)",
+			"[1, 2, 3, 4].sort(key=lambda x: x)",
+			"[1, 2, 3, 4].sort(key=lambda x: 1)",
+			"[1, 2, 3, 4].sort(key=lambda x: x - 1)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/legendary"
+	],
+	"file_history":
+	[
+		"/var/www/legendary/.travis.yml",
+		"/var/www/legendary/composer.json",
+		"/var/www/legendary/phpunit.xml",
+		"/var/www/legendary/.travis.yaml",
+		"/var/www/legendary/src/legendary/View.php",
+		"/var/www/legendary/test/views/common.php",
+		"/var/www/legendary/test/views/section.lgd.php",
+		"/var/www/legendary/test/views/index.lgd.php",
+		"/var/www/legendary/src/legendary/ViewConfig.php",
+		"/var/www/legendary/test_structure/index.php",
+		"/var/www/legendary/src/legendary/Engine/Interpreter.php",
+		"/var/www/legendary/src/legendary/Engine/Compiler.php",
+		"/var/www/legendary/src/legendary/Factory.php",
+		"/var/www/legendary/legendary.sublime-project",
+		"/home/wallace/.config/sublime-text-3/Local/Session.sublime_session",
+		"/var/www/legendary/src/legendary/SectionCollection.php",
+		"/var/www/legendary/src/legendary/Engine/SubExpression.php",
+		"/var/www/legendary/src/legendary/Engine/Expression.php",
+		"/var/www/legendary/BUGS.md",
+		"/var/www/lab/forms/forms.sublime-project",
+		"/var/www/unibh/app/views/elements/common-alert.blade.php",
+		"/var/www/unibh/public/js/wm-modal.js",
+		"/var/www/unibh/public/js/remessa/producao_baixar_carga.js",
+		"/var/www/unibh/public/css/wm-modal.css",
+		"/var/www/unibh/app/views/remessa/producao_baixar_carga.blade.php",
+		"/var/www/unibh/app/views/elements/flash/modal_flash_message.blade.php",
+		"/var/www/unibh/public/css/remessa/producao_baixar_carga.css",
+		"/var/www/unibh/public/css/default.css",
+		"/var/www/lab/forms/gulpfile.js",
+		"/var/www/lab/forms/coffee/wgm-form.coffee",
+		"/var/www/unabh/public/js/remessa/producao_baixar_carga.js",
+		"/var/www/unabh/app/views/remessa/producao_baixar_carga.blade.php",
+		"/var/www/lab/forms/bower.json",
+		"/var/www/unabh/public/js/remessa/x.js",
+		"/var/www/unabh/public/js/remessa/x.coffee",
+		"/var/www/unabh/public/js/remessa/producao_baixar_carga.coffee",
+		"/var/www/lab/forms/login.php",
+		"/var/www/lab/forms/index.php",
+		"/var/www/lab/forms/public/js/wgm-form.js",
+		"/var/www/lab/forms/package.json",
+		"/var/www/lab/forms/Cakefile",
+		"/home/wallace/Área de Trabalho/senha",
+		"/var/www/lab/forms/wgm-grid.scss",
+		"/var/www/lab/forms/wgm-form.scss",
+		"/var/www/unibh/app/controllers/RemessaController.php",
+		"/var/www/unabh/app/models/Remessa.php",
+		"/var/www/unabh/app/controllers/SolicitacaoController.php",
+		"/var/www/unabh/app/controllers/RemessaController.php",
+		"/var/www/unibh/app/models/Solicitacao.php",
+		"/var/www/legendary/test_structure/config/view.php",
+		"/var/www/legendary/server.sh",
+		"/var/www/legendary/test_structure/views/home/index.lgd.php",
+		"/var/www/legendary/test_structure/views/base.lgd.php",
+		"/var/www/legendary/test_structure/storage/compiled/0ded3c0cd241a7502ecf2483b65b89ba",
+		"/var/www/legendary/vendor/victorjonsson/markdowndocs/src/PHPDocsMD/Reflector.php",
+		"/var/www/Lex/Lexer.php",
+		"/var/www/lab/forms/_variables.scss",
+		"/var/www/lab/forms/public/css/wgm-form.css",
+		"/var/www/lab/forms/public/css/wgm-grid.css",
+		"/var/www/lab/forms/colors.scss",
+		"/var/www/unibh/app/filters.php",
+		"/var/www/unabh/app/filters.php",
+		"/var/www/lab/forms/config.rb",
+		"/var/www/lab/forms/.gitignore",
+		"/var/www/unabh/app/views/remessa/conferir_cartao.blade.php",
+		"/var/www/unabh/app/views/remessa/conferir.blade.php",
+		"/var/www/unabh/public/css/remessa/conferir.css",
+		"/var/www/unabh/public/js/remessa/conferir.js",
+		"/var/www/unibh/public/js/remessa/conferir.js",
+		"/var/www/unibh/app/views/remessa/conferir.blade.php",
+		"/var/www/unibh/public/css/remessa/conferir.css",
+		"/var/www/unibh/.buildpath",
+		"/var/www/lab/forms/wgm-grid.css",
+		"/var/www/lab/forms/tmt-form.scss",
+		"/var/www/lab/forms/tmt-grid.scss",
+		"/home/wallace/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/var/www/unibh/app/routes.php",
+		"/var/www/unibh/app/templates/view.txt",
+		"/var/www/unibh/app/controllers/InstituicaosController.php",
+		"/var/www/unibh/bootstrap/start.php",
+		"/var/www/unibh/app/config/app.php",
+		"/var/www/unibh/composer.json",
+		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
+		"/var/www/lab/forms/public/css/tmt-grid.css",
+		"/var/www/lab/forms/tmt-form.css.map",
+		"/var/www/lab/forms/tmt-form.css",
+		"/var/www/lab/forms/tmt-grid.css",
+		"/var/www/lab/forms/css.css",
+		"/var/www/cv/application/views/layouts/default_autenticado.blade.php",
+		"/var/www/cv/public/static/css/jquery-ui.css",
+		"/home/wallace/Área de Trabalho/email.png",
+		"/var/www/cv/public/static/js/home/compartilhamento.js",
+		"/var/www/cv/public/static/js/versao_2/home/animation-home.js",
+		"/var/www/cv/public/static/js/home/acompanhar_pedido.js",
+		"/var/www/cv/application/views/home/versao_2/index.blade.php",
+		"/var/www/cv/application/routes.php",
+		"/var/www/cv/public/static/js/home/login.js",
+		"/var/www/cv/public/static/css/circleLoader.css",
+		"/var/www/cv/public/static/css/home/modal-advantages.css",
+		"/var/www/cv/application/controllers/home.php",
+		"/var/www/cv/application/views/home/index_new.blade.php",
+		"/var/www/cv/public/static/js/circleLoader.js",
+		"/var/www/cv/public/static/js/jBanner.js",
+		"/var/www/cv/public/static/js/acontecimentos.js",
+		"/var/www/cv/public/static/js/placeholder.js",
+		"/var/www/cv/public/static/js/home/index_v_1.js",
+		"/var/www/cv/public/static/css/home/index_v_1.css",
+		"/var/www/cv/laravel/routing/router.php",
+		"/var/www/cv/application/views/home/index.blade.php",
+		"/var/www/cv/public/static/js/agenda/valida_agenda.js",
+		"/var/www/cv/public/static/js/modal/newslatter/newslatter.js",
+		"/var/www/cv/public/static/js/home/carrossel.js",
+		"/var/www/cv/public/static/js/jLoader.js",
+		"/var/www/cv/public/static/js/home/valida_faq.js",
+		"/var/www/cv/public/static/js/home/valida_esqueceu_senha.js",
+		"/var/www/cv/public/static/js/home/valida_esqueceu_email.js",
+		"/var/www/cv/public/static/js/home/valida_abrir_conta.js",
+		"/var/www/cv/public/static/js/venda/gerais.js",
+		"/var/www/cv/public/static/css/jLoader.css",
+		"/var/www/cv/public/static/css/agenda/agenda.css",
+		"/var/www/cv/public/static/css/conveniado/form_inputs.css",
+		"/var/www/cv/public/static/css/home/modal_home.css",
+		"/var/www/cv/public/static/css/home/default_novo.css",
+		"/var/www/lab/anima/application/views/sistema/relatorio_gerado.php",
+		"/var/www/cake/config/bootstrap.php",
+		"/var/www/cake/src/Controller/AppController.php",
+		"/var/www/cake/composer.json",
+		"/var/www/cake/config/app.php"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/var/www/cv",
+			"/var/www/unibh",
+			"/var/www/cv",
+			"/var/www/php7/src",
+			"/var/www/unabh/public/css",
+			"/var/www/lab/time",
+			"/var/www/cv/",
+			"/var/www/cv/application",
+			"/var/www/cv/",
+			"/var/www/cv/laravel",
+			"/var/www/cv/application",
+			"/var/www/cv/",
+			"/var/www/cv/application",
+			"/var/www/cv",
+			"/var/www/laralab/vendor",
+			"/var/www/cv",
+			"/var/www/np",
+			"/var/www/uniselo",
+			"/var/www/lab/anima",
+			"/var/www/cv",
+			"/var/www/uniselo",
+			"/var/www/cv/laravel",
+			"/var/www/cv/",
+			"/var/www/cv/laravel",
+			"/var/www/cv/laravel/database",
+			"/var/www/cv/laravel",
+			"/var/www/cv/",
+			"/var/www/cv/application/views/",
+			"/var/www/cv/application/views/beneficiario/",
+			"/var/www/unibh",
+			"/var/www/cv/",
+			"/var/www/unibh/app/views",
+			"/var/www/unibh",
+			"/var/www/unibh/vendor",
+			"/var/www/unibh",
+			"/var/www/cv/laravel",
+			"/var/www/cv/",
+			"/var/www/unibh/",
+			"/var/www/unibh/public",
+			"/var/www/unibh/app",
+			"/var/www/unibh/vendor",
+			"/var/www/unibh/",
+			"/var/www/unibh/application",
+			"/var/www/unibh/public/js",
+			"/var/www/unibh/public",
+			"/var/www/unibh/vendor/gregwar",
+			"/var/www/unibh",
+			"/var/www/cv/application/views"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"getConfig",
+			"test",
+			"@return static",
+			"static",
+			"@return $this",
+			"SubExpression",
+			"wm-alert",
+			"0px",
+			"wm-btn",
+			"options",
+			"==",
+			"blockClick",
+			" $('#only-print-container')",
+			"iframe",
+			"                    '",
+			"getViewPath",
+			"implode",
+			"media",
+			"$yellow-color",
+			"$green-color",
+			"input-border",
+			"$grid-name",
+			"margin:",
+			"input-s",
+			"input-",
+			"$color",
+			"$input-border-color",
+			"input-b",
+			"input-color",
+			"border-color",
+			"$light-color",
+			"red-color",
+			"blue-color",
+			"%input-style",
+			"%input-style ",
+			"green",
+			"$button-bg-rese",
+			"$button-bg-submit",
+			"$button-bg-default",
+			"$button-bg-submit",
+			"$button-bg-default",
+			"$button-bg-reset",
+			"button-box",
+			"box-shadow:",
+			"box-shadow ",
+			"        \n",
+			"darken",
+			"input-st",
+			"$button-color-dark",
+			"button-st",
+			" @",
+			"margin",
+			"label",
+			"padding-ri",
+			"$media-mobile",
+			"button-border-variation",
+			";\n",
+			"margin",
+			"tmt-grid",
+			"tmt",
+			"20",
+			"$button-color",
+			"button-color-default",
+			"reset",
+			"button-color-submit",
+			"inputBgColor",
+			"inputBorderColor",
+			"inputFocusColor",
+			"inputFontSize",
+			"inputFontFamily",
+			"tmt-form",
+			";\n",
+			"borderInputColor",
+			"bgInputColor",
+			"?>\n",
+			"min.min.",
+			"(?!\\.min)\\.js",
+			"char",
+			"return",
+			".css",
+			"min.min.",
+			"(?!\\.min)\\.js",
+			"\\.min\\.js",
+			"\\.min\\.js$",
+			"[^(min)]\\.js",
+			".css",
+			" car",
+			"include",
+			"getsenha",
+			"getusuario",
+			"password",
+			"username",
+			"static/",
+			"mailer'",
+			"$usuario->sol",
+			"try",
+			"files",
+			"$_FILES",
+			"(\\d+)",
+			"\\d+",
+			"financeiro",
+			"getFinanceir",
+			"new Soli",
+			"solicitacao",
+			"new SolicitacaoReprovada([\n                                'solicitacao_id' => $solicitacao->id,\n                                'texto'          => $motivo,\n                            ]);",
+			"conferir",
+			"conferencia",
+			"n",
+			"importar_dados_yahoo",
+			"s",
+			"\\WallaceMaxters\\SevenFramework\\View\\",
+			" ",
+			"?>",
+			"contenttags",
+			"getContentTags",
+			"getTags",
+			"getEscaped",
+			"escapedTags",
+			"preg",
+			"setName",
+			"  '",
+			"redirect",
+			"chat_status",
+			"\"x\"",
+			"x",
+			"axis",
+			"string",
+			"started"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".min.js",
+			"'$1',",
+			"\"$1\"",
+			",\\n",
+			"#990F20",
+			"#FA1733",
+			"'",
+			"WallaceMaxters\\Time",
+			"!1",
+			"!0",
+			"",
+			"!')",
+			">\n",
+			"}}\n",
+			"ASC",
+			"",
+			"'$1',",
+			"'$1'",
+			",",
+			"",
+			"usuario.",
+			"\"$1\",",
+			"\"$1\"",
+			"wm-btn-green2",
+			"\\n\\n",
+			"        \n",
+			":', ['class' => 'label']) }}",
+			":', ['class' => 'label') }}",
+			"\\n\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "test/ViewTest.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73,
+								73
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "composer.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 672,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								307,
+								307
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.css3_validator":
+	{
+		"height": 178.0
+	},
+	"output.csslint_result_view":
+	{
+		"height": 154.0
+	},
+	"output.exec":
+	{
+		"height": 243.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 140.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 110.0
+	},
+	"pinned_build_system": "",
+	"project": "legendary.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"view",
+				"src/legendary/View.php"
+			],
+			[
+				"viewconf",
+				"src/legendary/ViewConfig.php"
+			],
+			[
+				"factory",
+				"src/legendary/Factory.php"
+			],
+			[
+				"inter",
+				"src/legendary/Engine/Interpreter.php"
+			],
+			[
+				"compiler",
+				"src/legendary/Engine/Compiler.php"
+			],
+			[
+				"sec",
+				"src/legendary/SectionCollection.php"
+			],
+			[
+				"expes",
+				"src/legendary/Engine/Expression.php"
+			],
+			[
+				"subex",
+				"src/legendary/Engine/SubExpression.php"
+			],
+			[
+				"wm-modal",
+				"public/css/wm-modal.css"
+			],
+			[
+				"alert",
+				"app/views/elements/common-alert.blade.php"
+			],
+			[
+				"flash",
+				"app/views/elements/flash/modal_flash_message.blade.php"
+			],
+			[
+				"wmmoda",
+				"public/css/wm-modal.css"
+			],
+			[
+				"producao_baixar",
+				"app/views/remessa/producao_baixar_carga.blade.php"
+			],
+			[
+				"producao_car",
+				"public/js/remessa/producao_baixar_carga.js"
+			],
+			[
+				"default",
+				"public/css/default.css"
+			],
+			[
+				"wm",
+				"public/js/wm-modal.js"
+			],
+			[
+				"default.css",
+				"public/css/default.css"
+			],
+			[
+				"wmo",
+				"public/js/wm-modal.js"
+			],
+			[
+				"producao_baix",
+				"public/js/remessa/producao_baixar_carga.js"
+			],
+			[
+				"producao_",
+				"public/js/remessa/producao_baixar_carga.js"
+			],
+			[
+				"producao_baixar_car",
+				"app/views/remessa/producao_baixar_carga.blade.php"
+			],
+			[
+				"x.js",
+				"public/js/remessa/x.js"
+			],
+			[
+				"x.cof",
+				"public/js/remessa/x.coffee"
+			],
+			[
+				"producao_a",
+				"public/js/remessa/producao_baixar_carga.js"
+			],
+			[
+				"producao",
+				"app/views/remessa/producao_baixar_carga.blade.php"
+			],
+			[
+				"producaoi_",
+				"public/js/remessa/producao_baixar_carga.js"
+			],
+			[
+				"wm-form",
+				"coffee/wgm-form.coffee"
+			],
+			[
+				"remessacon",
+				"app/controllers/RemessaController.php"
+			],
+			[
+				"remessaco",
+				"app/controllers/RemessaController.php"
+			],
+			[
+				"remesa",
+				"app/models/Remessa.php"
+			],
+			[
+				"sol",
+				"app/controllers/SolicitacaoController.php"
+			],
+			[
+				"remessa",
+				"app/controllers/RemessaController.php"
+			],
+			[
+				"solici",
+				"app/models/Solicitacao.php"
+			],
+			[
+				"view.php",
+				"src/legendary/View.php"
+			],
+			[
+				"viewcon",
+				"src/legendary/ViewConfig.php"
+			],
+			[
+				"reflector",
+				"vendor/victorjonsson/markdowndocs/src/PHPDocsMD/Reflector.php"
+			],
+			[
+				"wm-grid",
+				"wgm-grid.scss"
+			],
+			[
+				"wgm-gri",
+				"public/css/wgm-grid.css"
+			],
+			[
+				"grid",
+				"wgm-grid.scss"
+			],
+			[
+				"form.scss",
+				"forms/wgm-form.scss"
+			],
+			[
+				"filters",
+				"unabh/app/filters.php"
+			],
+			[
+				"conferir.css",
+				"public/css/remessa/conferir.css"
+			],
+			[
+				"conferir.blade",
+				"app/views/remessa/conferir.blade.php"
+			],
+			[
+				"conferrir.blade",
+				"app/views/remessa/conferir_cartao.blade.php"
+			],
+			[
+				"conferir",
+				"public/js/remessa/conferir.js"
+			],
+			[
+				"conferir.js",
+				"public/js/remessa/conferir.js"
+			],
+			[
+				"",
+				".buildpath"
+			],
+			[
+				"soli",
+				"unibh/app/models/Solicitacao.php"
+			],
+			[
+				"foundationapp",
+				"unibh/vendor/laravel/framework/src/Illuminate/Foundation/Application.php"
+			],
+			[
+				"start",
+				"unibh/bootstrap/start.php"
+			],
+			[
+				"confapp.h",
+				"unibh/app/config/app.php"
+			],
+			[
+				"jquery-u",
+				"public/static/css/jquery-ui.css"
+			],
+			[
+				"homecompar",
+				"public/static/js/home/compartilhamento.js"
+			],
+			[
+				"default_autent",
+				"application/views/layouts/default_autenticado.blade.php"
+			],
+			[
+				"jbanner",
+				"public/static/js/jBanner.js"
+			],
+			[
+				"circlel",
+				"public/static/css/circleLoader.css"
+			],
+			[
+				"modal-ad",
+				"public/static/css/home/modal-advantages.css"
+			],
+			[
+				"acontecimento",
+				"public/static/js/acontecimentos.js"
+			],
+			[
+				"place",
+				"public/static/js/placeholder.js"
+			],
+			[
+				"login.js",
+				"public/static/js/home/login.js"
+			],
+			[
+				"index_1",
+				"public/static/js/home/index_v_1.js"
+			],
+			[
+				"index_v",
+				"public/static/css/home/index_v_1.css"
+			],
+			[
+				"index_new",
+				"application/views/home/index_new.blade.php"
+			],
+			[
+				"routes",
+				"application/routes.php"
+			],
+			[
+				"router",
+				"laravel/routing/router.php"
+			],
+			[
+				"homeindex",
+				"application/views/home/index.blade.php"
+			],
+			[
+				"valida_agenda",
+				"public/static/js/agenda/valida_agenda.js"
+			],
+			[
+				"newlaster.js",
+				"public/static/js/modal/newslatter/newslatter.js"
+			],
+			[
+				"carro",
+				"public/static/js/home/carrossel.js"
+			],
+			[
+				"jload",
+				"public/static/js/jLoader.js"
+			],
+			[
+				"comparti",
+				"public/static/js/home/compartilhamento.js"
+			],
+			[
+				"valida_fa",
+				"public/static/js/home/valida_faq.js"
+			],
+			[
+				"acompanhar",
+				"public/static/js/home/acompanhar_pedido.js"
+			],
+			[
+				"valida_esque",
+				"public/static/js/home/valida_esqueceu_senha.js"
+			],
+			[
+				"valida_esq",
+				"public/static/js/home/valida_esqueceu_email.js"
+			],
+			[
+				"valida_abrir_conta",
+				"public/static/js/home/valida_abrir_conta.js"
+			],
+			[
+				"gerais.js",
+				"public/static/js/venda/gerais.js"
+			],
+			[
+				"animation-hom",
+				"public/static/js/versao_2/home/animation-home.js"
+			],
+			[
+				"jloader",
+				"public/static/css/jLoader.css"
+			],
+			[
+				"agenda.css",
+				"public/static/css/agenda/agenda.css"
+			],
+			[
+				"jquery-ui",
+				"public/static/css/jquery-ui.css"
+			],
+			[
+				"form_inpu",
+				"public/static/css/conveniado/form_inputs.css"
+			],
+			[
+				"modal_home.",
+				"public/static/css/home/modal_home.css"
+			],
+			[
+				"default_novo",
+				"public/static/css/home/default_novo.css"
+			],
+			[
+				"homeversaoindex",
+				"application/views/home/versao_2/index.blade.php"
+			],
+			[
+				"hom",
+				"application/controllers/home.php"
+			],
+			[
+				"relatorio_gerado",
+				"application/views/sistema/relatorio_gerado.php"
+			],
+			[
+				"appc",
+				"src/Controller/AppController.php"
+			],
+			[
+				"boot",
+				"config/bootstrap.php"
+			],
+			[
+				"appcont",
+				"src/Controller/AppController.php"
+			],
+			[
+				"boots",
+				"config/bootstrap.php"
+			],
+			[
+				"requesthadler",
+				"vendor/cakephp/cakephp/src/Controller/Component/RequestHandlerComponent.php"
+			],
+			[
+				"tim",
+				"public/tim.php"
+			],
+			[
+				"timh",
+				"public/tim.php"
+			],
+			[
+				"footer-blade",
+				"application/views/home/footer-1.blade.php"
+			],
+			[
+				"footer-",
+				"application/views/conveniado/footer-autenticado.blade.php"
+			],
+			[
+				"controllerin",
+				"vendor/laravel/framework/src/Illuminate/Routing/ControllerInspector.php"
+			],
+			[
+				"layout.blade",
+				"app/views/layouts/default.blade.php"
+			],
+			[
+				"login.",
+				"app/views/layouts/login.blade.php"
+			],
+			[
+				"htmlb",
+				"vendor/laravel/framework/src/Illuminate/Html/HtmlBuilder.php"
+			],
+			[
+				"app",
+				"bootstrap/app.php"
+			],
+			[
+				"illuminate/foundation/http/kernel",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php"
+			],
+			[
+				"illuminatekerne",
+				"vendor/laravel/framework/src/Illuminate/Contracts/Console/Kernel.php"
+			],
+			[
+				"conferir.",
+				"public/js/remessa/conferir.js"
+			],
+			[
+				"clientcon",
+				"app/controllers/webservice/ClientController.php"
+			],
+			[
+				"menu",
+				"app/views/layouts/elements/menu_links_aluno.blade.php"
+			],
+			[
+				"solicita",
+				"app/controllers/SolicitacaoController.php"
+			],
+			[
+				"route",
+				"application/routes.php"
+			],
+			[
+				"remessacontroller",
+				"unibh/app/controllers/RemessaController.php"
+			],
+			[
+				"remessacontroll",
+				"unabh/app/controllers/RemessaController.php"
+			],
+			[
+				"aguardando",
+				"unibh/app/views/remessa/aguardando_aprovacao_financeira.blade.php"
+			],
+			[
+				"aprovaca",
+				"unibh/public/js/remessa/aguardando_aprovacao_financeira.js"
+			],
+			[
+				"solicitacaocontroller",
+				"unabh/app/controllers/SolicitacaoController.php"
+			],
+			[
+				"unasolicitacot",
+				"unibh/app/controllers/SolicitacaoController.php"
+			],
+			[
+				"cadastr",
+				"cv/application/controllers/cadastrar.php"
+			],
+			[
+				"cssselector",
+				"laravel5/vendor/symfony/css-selector/CssSelectorConverter.php"
+			],
+			[
+				"formbuild",
+				"vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php"
+			],
+			[
+				"form.php",
+				"vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/Form.php"
+			],
+			[
+				"consoleappl",
+				"vendor/laravel/framework/src/Illuminate/Console/Application.php"
+			],
+			[
+				"reprovadas",
+				"app/views/solicitacao/reprovadas.blade.php"
+			],
+			[
+				"aprovacao",
+				"public/js/remessa/aguardando_aprovacao_financeira.js"
+			],
+			[
+				"historico_a",
+				"app/views/remessa/historico_aprovacao_financeira.blade.php"
+			],
+			[
+				"historico_apro",
+				"app/views/remessa/historico_aprovacao_financeira.blade.php"
+			],
+			[
+				"financeiroin",
+				"public/js/financeiro/index.js"
+			],
+			[
+				"solicitacao",
+				"unibh/app/controllers/SolicitacaoController.php"
+			],
+			[
+				"filebag",
+				"cv/vendor/symfony/http-foundation/FileBag.php"
+			],
+			[
+				"uploadfile",
+				"cv/vendor/symfony/http-foundation/File/UploadedFile.php"
+			],
+			[
+				"filter",
+				"cv/application/filters.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 502.0,
+		"last_filter": "uhn",
+		"selected_items":
+		[
+			[
+				"uhn",
+				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
+			],
+			[
+				"l",
+				"/var/www/assets-laravel/laravel-assets.sublime-project"
+			],
+			[
+				"uni",
+				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
+			],
+			[
+				"thumb",
+				"/var/www/thumb/thumb.sublime-project"
+			],
+			[
+				"un",
+				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
+			],
+			[
+				"una",
+				"/var/www/unabh/una-identidade-estudantil.sublime-project"
+			],
+			[
+				"u",
+				"/var/www/unabh/una-identidade-estudantil.sublime-project"
+			],
+			[
+				"cv",
+				"/var/www/cv/cardvantagens.sublime-project"
+			],
+			[
+				"",
+				"/var/www/thumb-laravel/laravel-thumb.sublime-project"
+			],
+			[
+				"asset",
+				"/var/www/assets-laravel/laravel-assets.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 817.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 317.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

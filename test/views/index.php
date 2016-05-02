@@ -1,0 +1,1 @@
+PHPLegends\View\<?php echo $class ?>
