@@ -22,7 +22,7 @@ class View
     /**
      * @var \PHPLegends\View\View
      * */
-    protected $extendedView;
+    protected $parentView;
 
     /**
      * @var \PHPLegends\View\SectionCollection
@@ -32,27 +32,31 @@ class View
     /**
      * @var string
      * */
-    protected static $extension = 'php';
+    protected $extension = 'php';
 
     /**
      * @var string
      * */
-    protected static $path;
+    protected $basepath;
 
-    public function __construct ($name, $data = [], SectionCollection $section = null)
+    /**
+     * @param string $name
+     * @param ArrayObject|array $data
+     * @param string|null $basepath
+     * @param string|null $extension
+     * @return void
+     * */
+    public function __construct ($name, $data = [], $basepath = null, $extension = null)
     {
         $this->setName($name);
 
         $this->resolveDataValue($data);
 
-        if (! file_exists($filename = $this->buildFilename()))
-        {   
-            throw new \RuntimeException("file '$filename' doesn't exists");
-        }
+        $basepath && $this->setPath($basepath);
 
-        $this->setSectionsCollection(
-            $section ? $section : new SectionCollection
-        );
+        $extension && $this->setExtension($extension);
+
+        $this->setSectionCollection(new SectionCollection);
 
     }
 
@@ -116,16 +120,17 @@ class View
     }
 
     /**
-     * 
+     * Gets the real filename
+     * @return string
      * */
     public function buildFilename()
     {
-        $filename = sprintf(
-            '%s/%s.%s',
-            static::$path, 
-            ltrim($this->getName(), '/'),
-            static::$extension
-        );
+        $filename = $this->getBasepath() . '/' . $this->getName() . '.' . $this->getExtension();
+
+        if (! file_exists($filename))
+        {   
+            throw new \RuntimeException("file '$filename' doesn't exists");
+        }
 
         return $filename;
     }
@@ -144,14 +149,14 @@ class View
 
             require $this->buildFilename();
 
-            if ($this->extendedView) {
+            if ($this->parentView) {
 
-                require $this->extendedView->getName();
+                require $this->parentView->buildFilename();
             }
 
         } catch (\Exception $e) {
 
-            $this->handleException($e);
+            return $this->handleException($e);
         }
 
         return ltrim(ob_get_clean());
@@ -159,15 +164,18 @@ class View
     }
 
     /**
-    * Starts a section
+    * Starts a section. If content is passed, section doesn't not use "blocks"
     * @param string $name
     * @return void
     */
-    public function startSection($name)
+    public function startSection($name, $content = null)
     {
-        $section = $this->sections->findOrCreate($name);
+        $section = new Section($name);
 
-        $section->start();
+        $this->sections->attach($section);
+
+        $content ? $section->setContent($content) : $section->start();
+
     }
 
     /**
@@ -176,9 +184,9 @@ class View
     * @param string $default
     * @return string
     */
-    public function section($name)
+    public function section($name, $content = null)
     {
-        return $this->startSection($name);
+        return $this->startSection($name, $content);
     }
 
     /**
@@ -205,11 +213,10 @@ class View
     */
     public function getSection($name, $default = '')
     {
-        $section = $this->sections->get($name);
 
-        if ($section instanceof Section) {
+        if ($this->sections->has($name)) {
 
-            return $section->getContent();
+            return $this->sections->get($name);
         }
 
         return $default;
@@ -219,7 +226,7 @@ class View
     * Gets the collection of sections
     * @return \PHPLegends\Legendary\SectionCollection
     */
-    public function getSectionsCollection()
+    public function getSectionCollection()
     {
         return $this->sections;
     }
@@ -229,7 +236,7 @@ class View
     * @param \PHPLegends\Legendary\SectionCollection $sections
     * @return void
     */
-    public function setSectionsCollection(SectionCollection $sections)
+    public function setSectionCollection(SectionCollection $sections)
     {
         $this->sections = $sections;
     }
@@ -240,9 +247,13 @@ class View
     * @param array $data
     * @return void
     */
-    public function extend($name, $data = [])
+    public function extend($name, $data = [], $basepath = null, $extension = null)
     {
-        $this->extendedView = new static($name, $data);
+        $basepath ?: $basepath = $this->basepath;
+
+        $extension ?: $extension = $this->extension;
+
+        $this->parentView = new static($name, $data, $basepath, $extension);
     }
 
     /**
@@ -258,7 +269,8 @@ class View
     }
 
     /**
-    * returns strings using the method static::render()
+    * returns strings using the method self::render()
+    * 
     * @return string
     */
     public function __toString() 
@@ -267,44 +279,65 @@ class View
     }
 
     /**
-     * @param string $extension
-     * @return void
-     * */
-
-    public static function setExtension($extension)
-    {
-        static::$extension = $extension;
-    }
-
-    /**
-     * @param string $path
-     * @return void
-     * */
-
-    public static function setPath($path)
-    {
-        static::$path = $path;
-    }
-
-    /**
      * Gets the value of extension.
      *
      * @return string
      */
-    public static function getExtension()
+    public function getExtension()
     {
-        return static::$extension;
+        return $this->extension;
     }
 
+    /**
+     * Sets the value of extension.
+     *
+     * @param mixed $extension the extension
+     *
+     * @return self
+     */
+    public function setExtension($extension)
+    {
+        $this->extension = $extension;
+
+        return $this;
+    }
 
     /**
-     * Gets the value of paths.
+     * Gets the value of path.
      *
      * @return string
      */
-    public static function getPath()
+    public function getBasepath()
     {
-        return static::$path;
+        return $this->basepath;
+    }
+
+    /**
+     * Sets the value of path.
+     *
+     * @param string $basepath
+     *
+     * @return self
+     */
+    public function setPath($basepath)
+    {
+        $this->basepath = rtrim($basepath, '/');
+
+        return $this;
+    }
+
+    /**
+     * Append in a section. If content is passed, section doesn't not use "blocks"
+     * 
+     * @param string $name
+     * @param string|null $content
+     * @return void
+     * */
+    public function appendSection($name, $content = null)
+    {
+        $section = $this->sections->findOrCreate($name);
+
+        $content ? $section->appendContent($content) : $section->start();
     }
 
 }

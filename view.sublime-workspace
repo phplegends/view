@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"Exte",
+				"extension〔variable〕"
+			],
+			[
+				"eten",
+				"extension"
+			],
+			[
+				"append",
+				"appendContent"
+			],
+			[
+				"sec",
+				"sections"
+			],
+			[
+				"getSe",
+				"getSectionCollection"
+			],
+			[
+				"exten",
+				"$extension〔variable〕"
+			],
+			[
+				"name",
+				"namespace〔keyword〕"
+			],
+			[
+				"__",
+				"__con	construct"
+			],
+			[
 				"PHP_VE",
 				"PHP_MAJOR_VERSION〔constant〕"
 			],
@@ -482,43 +514,27 @@
 			[
 				"s",
 				"$syntax〔variable〕"
-			],
-			[
-				"mat",
-				"$matches〔variable〕"
-			],
-			[
-				"resu",
-				"$resultado〔variable〕"
-			],
-			[
-				"in",
-				"interpolations"
-			],
-			[
-				"ed",
-				"education"
-			],
-			[
-				"get_cla",
-				"get_class_methods"
-			],
-			[
-				"call_user",
-				"call_user_func_array"
-			],
-			[
-				"elem",
-				"$elements〔variable〕"
-			],
-			[
-				"Dom",
-				"DomDocument"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "src/View.php",
+			"settings":
+			{
+				"buffer_size": 6896,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/ViewTest.php",
+			"settings":
+			{
+				"buffer_size": 1203,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "MINIFY JS",
 	"build_system_choices":
@@ -528,12 +544,24 @@
 	"command_palette":
 	{
 		"height": 400.0,
-		"last_filter": "php",
+		"last_filter": "get",
 		"selected_items":
 		[
 			[
+				"get",
+				"Generate Getter and Setter for ..."
+			],
+			[
+				"getteer",
+				"PHP: Generate Getters and Setters"
+			],
+			[
 				"php",
 				"Set Syntax: PHP"
+			],
+			[
+				"getter",
+				"Generate Getter and Setter for ..."
 			],
 			[
 				"install",
@@ -1137,25 +1165,32 @@
 	"expanded_folders":
 	[
 		"/var/www/packages/view",
-		"/var/www/packages/view/serve",
-		"/var/www/packages/view/src",
-		"/var/www/packages/view/test/views"
+		"/var/www/packages/view/test"
 	],
 	"file_history":
 	[
+		"/var/www/packages/view/test/ViewTest.php",
+		"/var/www/packages/view/.gitignore",
+		"/var/www/packages/view/test/views/home/child.phtml",
+		"/var/www/packages/view/test/views/home/parent.phtml",
+		"/var/www/packages/view/test/views/home/index.phtml",
+		"/var/www/packages/view/test/views/home/section.phtml",
+		"/var/www/packages/view/src/Section.php",
+		"/var/www/packages/view/src/SectionCollection.php",
+		"/var/www/packages/view/vendor/phplegends/collections/src/Collection.php",
+		"/var/www/packages/view/log.txt",
+		"/var/www/packages/view/src/Factory.php",
+		"/var/www/packages/view/test/views/index.phtml",
+		"/var/www/packages/view/src/View.php",
+		"/var/www/packages/view/test/views/section.phtml",
 		"/var/www/packages/view/view.sublime-project",
 		"/var/www/packages/view/serve/index.php",
 		"/var/www/packages/view/serve/views/base.php",
 		"/var/www/packages/view/serve/views/index.php",
-		"/var/www/packages/view/src/View.php",
-		"/var/www/packages/view/.gitignore",
-		"/var/www/packages/view/src/SectionCollection.php",
 		"/var/www/packages/view/.travis.yml",
 		"/var/www/packages/view/src/Config.php",
 		"/var/www/packages/view/test/views/index.php",
-		"/var/www/packages/view/test/ViewTest.php",
 		"/var/www/packages/view/src/Data.php",
-		"/var/www/packages/view/src/Factory.php",
 		"/home/wallace/Área de Trabalho/senha",
 		"/var/www/unibh/app/start/artisan.php",
 		"/var/www/unibh/app/observer/TarefaObserver.php",
@@ -1261,16 +1296,7 @@
 		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Queue/Jobs/SyncJob.php",
 		"/var/www/unibh/public/js/remessa/expedicao.js",
 		"/var/www/unibh/app/controllers/webservice/ClientController.php",
-		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Console/Application.php",
-		"/var/www/unibh/unibh-identidade-estudantil.sublime-project",
-		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Support/Facades/Queue.php",
-		"/var/www/unibh/public/js/jquery-ui.js",
-		"/var/www/unibh/app/views/remessa/historico_aprovacao_financeira.blade.php",
-		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-		"/var/www/unibh/app/views/errors/log_email.blade.php",
-		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Queue/Listener.php",
-		"/var/www/unibh/app/config/log.php",
-		"/home/wallace/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Console/Application.php"
 	],
 	"find":
 	{
@@ -1339,6 +1365,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getPath",
+			"$this->path",
+			"$path",
+			"parentView",
+			"extendedView",
+			"extend",
+			"closed",
+			"start()",
+			"start",
+			"start()",
+			"secions",
+			"static::$extension",
+			"static::$path",
+			"path",
 			"find",
 			"Exception",
 			"solicitacao",
@@ -1452,21 +1492,7 @@
 			"unibh.clien",
 			"auth",
 			"[\n",
-			"reason",
-			"rejected",
-			"reject",
-			"fsockopen",
-			"fsocketopen",
-			"carregarSolicitacoes",
-			"toStringFormat",
-			"paramform_",
-			"param",
-			"7",
-			" $",
-			"->ID",
-			"circle",
-			"paginate",
-			"meta/down"
+			"reason"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1514,14 +1540,77 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/View.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2149,
+								2149
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2003.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/ViewTest.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								461,
+								461
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -1558,7 +1647,7 @@
 	"project": "view.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1572,8 +1661,44 @@
 				"src/View.php"
 			],
 			[
+				"secti",
+				"src/Section.php"
+			],
+			[
+				"sec",
+				"src/Section.php"
+			],
+			[
+				"view.ph",
+				"src/View.php"
+			],
+			[
+				"index.ht",
+				"test/views/home/index.phtml"
+			],
+			[
+				"colle",
+				"vendor/phplegends/collections/src/Collection.php"
+			],
+			[
+				"sectioncol",
+				"src/SectionCollection.php"
+			],
+			[
+				"seco",
+				"src/SectionCollection.php"
+			],
+			[
+				"sectionc",
+				"src/SectionCollection.php"
+			],
+			[
 				"view.php",
-				"unibh/vendor/laravel/framework/src/Illuminate/View/View.php"
+				"src/View.php"
+			],
+			[
+				"sect",
+				"src/Section.php"
 			],
 			[
 				"artisan",
@@ -2042,42 +2167,6 @@
 			[
 				"webanima",
 				"unibh/app/config/webservices/anima.php"
-			],
-			[
-				"cli",
-				"unibh/app/controllers/webservice/ClientController.php"
-			],
-			[
-				"consoleapplication",
-				"unibh/vendor/laravel/framework/src/Illuminate/Console/Application.php"
-			],
-			[
-				"queuema",
-				"unibh/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php"
-			],
-			[
-				"facaqueue",
-				"unibh/vendor/laravel/framework/src/Illuminate/Support/Facades/Queue.php"
-			],
-			[
-				"expe",
-				"unibh/public/js/remessa/expedicao.js"
-			],
-			[
-				"jquery-ui",
-				"unibh/public/js/jquery-ui.js"
-			],
-			[
-				"default.bla",
-				"unibh/app/views/layouts/default.blade.php"
-			],
-			[
-				"expedicao",
-				"unibh/public/js/remessa/expedicao.js"
-			],
-			[
-				"historico_a",
-				"unibh/app/views/remessa/historico_aprovacao_financeira.blade.php"
 			]
 		],
 		"width": 0.0
@@ -2093,12 +2182,16 @@
 				"/var/www/unabh/una-identidade-estudantil.sublime-project"
 			],
 			[
-				"un",
-				"/var/www/unabh/una-identidade-estudantil.sublime-project"
+				"comauj",
+				"/var/www/comau/comau.sublime-project"
 			],
 			[
 				"uni",
 				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
+			],
+			[
+				"un",
+				"/var/www/unabh/una-identidade-estudantil.sublime-project"
 			],
 			[
 				"comau",

@@ -17,7 +17,6 @@ class SectionCollection extends Collection
 
     public function findOrCreate($name)
     {
-
         $section = $this->getOrDefault($name);
 
         if (! $section) {
@@ -28,6 +27,8 @@ class SectionCollection extends Collection
 
             return $section;
         }
+
+        file_put_contents('getted.txt', 1);
 
         return $section;
     }

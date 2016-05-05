@@ -1,23 +1,24 @@
 <?php
 
 use PHPLegends\View\View;
+use PHPLegends\View\Factory;
 
 class ViewTest extends PHPUnit_Framework_TestCase
 {
 
-    public function setUp()
+    protected function view($name, $data = [])
     {   
-        View::setPath(__DIR__);
-
-        View::setExtension('phtml');
+        return new View($name, $data, __DIR__ . '/views/', 'phtml');
     }
 
-    public function test()
+    public function testViewAndData()
     {
 
         $data = new ArrayObject(['class' => 'View']);
 
-        $view = new View('views/index', $data);
+        $view = $this->view('home/index', $data);
+
+        $this->assertEquals(__DIR__ . '/views', $view->getBasePath());
 
         $this->assertEquals('PHPLegends\View\View', $view->render());
 
@@ -29,7 +30,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
     public function testSection()
     {
-        $view = new View('views/section');
+        $view = $this->view('home/section');
 
         $view->render();
 
@@ -37,8 +38,20 @@ class ViewTest extends PHPUnit_Framework_TestCase
             'Testing Section', trim($view->getSection('content'))
         );
 
+        $this->assertEquals(
+            '\PHPLegends\View\Section', (string) $view->getSection('_debug')
+        );
 
-        var_dump($view->getSection('_debug'));
+    }
+
+    public function testExtend()
+    {
+        $view = $this->view('home/child');
+
+        $this->assertEquals(
+            'I am parent and my child is Maxters', $view->render()
+        );
+
     }
 
 }

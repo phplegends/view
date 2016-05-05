@@ -8,7 +8,6 @@ namespace PHPLegends\View;
 
 class Section
 {   
-
     /**
     * Contents of Section
     * @var string
@@ -18,15 +17,11 @@ class Section
     /**
     * @var boolean
     */
-    protected $started = false;
-
-
-    /**
-    * @var boolean
-    */
-
     protected $closed = true;
 
+    /**
+     * @var string
+    */
     protected $name;
 
     /**
@@ -64,7 +59,7 @@ class Section
     */
     public function setContent($content)
     {
-        $this->content = $content;
+        $this->content = (string) $content;
 
         return $this;
     }
@@ -91,29 +86,19 @@ class Section
     }
 
     /**
-    * Append output buffer in current section
-    * @return \PHPLegends\Legendary\Section
-    */
-    public function append()
-    {
-        $this->appendContent(ob_get_clean());
-
-        return $this;
-    }
-
-    /**
     * Starts the output buffer capturing in current section]
     * @return void
     */
     public function start()
     {
-        if ($this->started) return;
+        if (! $this->closed)
+        {
+            throw new \RuntimeException("The section {$this->name} already started.");
+        }
 
         ob_start();
 
-        $this->started = true;
-
-        $this->closed = false;      
+        $this->closed = false;    
     }
 
     /**
@@ -122,10 +107,12 @@ class Section
     */
     public function end()
     {
+        if ($this->closed)
+        {
+            throw new \RuntimeException("The section {$this->name} already closed.");
+        }
 
-        if (! $this->started) return;
-
-        $this->setContent(ob_get_clean());
+        $this->appendContent(ob_get_clean());
 
         $this->closed = true;
     }
@@ -138,4 +125,13 @@ class Section
     {
         return $this->getContent();
     }
+
+    public function __destruct()
+    {
+        if (! $this->closed)
+        {
+            throw new \RuntimeException("The section {$this->name} must be closed");
+        }
+    }
+
 }
