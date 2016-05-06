@@ -1,5 +1,7 @@
 {
-    "name"     : "phplegends/legendary",
+    "name"     : "phplegends/view",
+    "keywords" : ["view", "template"],
+    "description" : "Simple Template/Views for php",
     "authors": [
         {
             "name": "Wallace de Souza Vizerra",
@@ -12,7 +14,6 @@
             "role": "Developer"
         }
     ],
-    "description" : "Simple Template Engine for php",
     "require" : {
         "php" : ">=5.4.0",
         "pimple/pimple": "~3.0"

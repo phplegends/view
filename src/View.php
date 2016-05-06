@@ -2,7 +2,6 @@
 
 namespace PHPLegends\View;
 
-
 /**
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 */

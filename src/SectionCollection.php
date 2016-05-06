@@ -21,13 +21,11 @@ class SectionCollection extends Collection
 
         if (! $section) {
 
-            $section = new Section($name);
-
-            $this->attach($section);
+            $this->attach($section = new Section($name));
 
             return $section;
         }
-        
+
         return $section;
     }
 
