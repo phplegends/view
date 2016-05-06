@@ -27,9 +27,7 @@ class SectionCollection extends Collection
 
             return $section;
         }
-
-        file_put_contents('getted.txt', 1);
-
+        
         return $section;
     }
 
