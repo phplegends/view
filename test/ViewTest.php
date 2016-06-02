@@ -8,7 +8,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
     protected function view($name, $data = [])
     {   
-        return new View($name, $data, __DIR__ . '/views/', 'phtml');
+        return new View($name, $data, __DIR__ . '/views/');
     }
 
     public function testViewAndData()
@@ -16,7 +16,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
         $data = new ArrayObject(['class' => 'View']);
 
-        $view = $this->view('home/index', $data);
+        $view = $this->view('home/index.phtml', $data);
 
         $this->assertEquals(__DIR__ . '/views', $view->getBasePath());
 
@@ -30,7 +30,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
     public function testSection()
     {
-        $view = $this->view('home/section');
+        $view = $this->view('home/section.phtml');
 
         $view->render();
 
@@ -46,7 +46,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
     public function testExtend()
     {
-        $view = $this->view('home/child');
+        $view = $this->view('home/child.phtml');
 
         $this->assertEquals(
             'I am parent and my child is Maxters', $view->render()

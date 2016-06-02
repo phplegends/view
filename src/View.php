@@ -16,7 +16,7 @@ class View
     /**
      * @var string
      * */
-    protected $name;
+    protected $filename;
 
     /**
      * @var \PHPLegends\View\View
@@ -31,29 +31,23 @@ class View
     /**
      * @var string
      * */
-    protected $extension = 'php';
-
-    /**
-     * @var string
-     * */
     protected $basepath;
 
     /**
-     * @param string $name
+     * @param string $filename
      * @param ArrayObject|array $data
      * @param string|null $basepath
      * @param string|null $extension
      * @return void
      * */
-    public function __construct ($name, $data = [], $basepath = null, $extension = null)
+    
+    public function __construct ($filename, $data = [], $basepath = null)
     {
-        $this->setName($name);
+        $this->setFilename($filename);
 
         $this->resolveDataValue($data);
 
         $basepath && $this->setPath($basepath);
-
-        $extension && $this->setExtension($extension);
 
         $this->setSectionCollection(new SectionCollection);
 
@@ -94,17 +88,17 @@ class View
             return $this->setData(new \ArrayObject($data));
         }
 
-        throw new \InvalidArgumentException("Data must be ArrayObject, PHPLegends\View\Data or array value");
+        throw new \InvalidArgumentException("Data must be ArrayObject or array value");
     }
 
     /**
     * Set filename for view
-    * @param string $name
+    * @param string $filename
     * @return \PHPLegends\Legendary\View
     */
-    public function setName($name)
+    public function setFilename($filename)
     {
-        $this->name = $name;
+        $this->name = $filename;
 
         return $this;
     }
@@ -113,7 +107,7 @@ class View
     * Get filename used by current view
     * @return string
     */
-    public function getName()
+    public function getFilename()
     {
         return $this->name;
     }
@@ -124,8 +118,12 @@ class View
      * */
     public function buildFilename()
     {
-        $filename = $this->getBasepath() . '/' . $this->getName() . '.' . $this->getExtension();
+        $filename = $this->getFilename();
 
+        $basepath = $this->getBasepath();
+
+        $basepath && $filename = $basepath . '/' . $filename;
+        
         if (! file_exists($filename))
         {   
             throw new \RuntimeException("file '$filename' doesn't exists");
@@ -164,12 +162,12 @@ class View
 
     /**
     * Starts a section. If content is passed, section doesn't not use "blocks"
-    * @param string $name
+    * @param string $filename
     * @return void
     */
-    public function startSection($name, $content = null)
+    public function startSection($filename, $content = null)
     {
-        $section = new Section($name);
+        $section = new Section($filename);
 
         $this->sections->attach($section);
 
@@ -179,13 +177,13 @@ class View
 
     /**
     * Alias for startSection
-    * @param string $name
+    * @param string $filename
     * @param string $default
     * @return string
     */
-    public function section($name, $content = null)
+    public function section($filename, $content = null)
     {
-        return $this->startSection($name, $content);
+        return $this->startSection($filename, $content);
     }
 
     /**
@@ -206,16 +204,16 @@ class View
     
     /**
     * Gives the value of a initialized section
-    * @param string $name
+    * @param string $filename
     * @param string $default
     * @return string
     */
-    public function getSection($name, $default = '')
+    public function getSection($filename, $default = '')
     {
 
-        if ($this->sections->has($name)) {
+        if ($this->sections->has($filename)) {
 
-            return $this->sections->get($name);
+            return $this->sections->get($filename);
         }
 
         return $default;
@@ -242,17 +240,15 @@ class View
 
     /**
     * Extends the current view with a parent view. The data too is shared.
-    * @param string $name
+    * @param string $filename
     * @param array $data
     * @return void
     */
-    public function extend($name, $data = [], $basepath = null, $extension = null)
+    public function extend($filename, $data = [], $basepath = null)
     {
         $basepath ?: $basepath = $this->basepath;
 
-        $extension ?: $extension = $this->extension;
-
-        $this->parentView = new static($name, $data, $basepath, $extension);
+        $this->parentView = new static($filename, $data, $basepath);
     }
 
     /**
@@ -275,30 +271,6 @@ class View
     public function __toString() 
     {
         return $this->render();
-    }
-
-    /**
-     * Gets the value of extension.
-     *
-     * @return string
-     */
-    public function getExtension()
-    {
-        return $this->extension;
-    }
-
-    /**
-     * Sets the value of extension.
-     *
-     * @param mixed $extension the extension
-     *
-     * @return self
-     */
-    public function setExtension($extension)
-    {
-        $this->extension = $extension;
-
-        return $this;
     }
 
     /**
@@ -328,13 +300,13 @@ class View
     /**
      * Append in a section. If content is passed, section doesn't not use "blocks"
      * 
-     * @param string $name
+     * @param string $filename
      * @param string|null $content
      * @return void
      * */
-    public function appendSection($name, $content = null)
+    public function appendSection($filename, $content = null)
     {
-        $section = $this->sections->findOrCreate($name);
+        $section = $this->sections->findOrCreate($filename);
 
         $content ? $section->appendContent($content) : $section->start();
     }
