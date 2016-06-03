@@ -8,11 +8,10 @@ class FactoryTest extends PHPUnit_Framework_TestCase
     {
         $factory = new Factory(__DIR__ . '/views/', 'phtml');
 
-        $view = $factory->create('home/index');
+        $factory->setPathAlias('factory', 'home/testing/alias/for/view/factory');
 
-        $this->assertInstanceof(
-            'PHPLegends\View\View',
-            $view
-        );
+        $view = $factory->create('factory:alias_test'); // or __invoke
+
+        $this->assertInstanceof('PHPLegends\View\View', $view);
     }
 }

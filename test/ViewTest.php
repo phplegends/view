@@ -8,7 +8,11 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
     protected function view($name, $data = [])
     {   
-        return new View($name, $data, __DIR__ . '/views/');
+        $factory = function ($name, $data = []) {
+            return new View(__DIR__ . '/views/' . $name, $data);
+        };
+
+        return $factory($name, $data)->setFactory($factory);
     }
 
     public function testViewAndData()
@@ -17,8 +21,6 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $data = new ArrayObject(['class' => 'View']);
 
         $view = $this->view('home/index.phtml', $data);
-
-        $this->assertEquals(__DIR__ . '/views', $view->getBasePath());
 
         $this->assertEquals('PHPLegends\View\View', $view->render());
 
