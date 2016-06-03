@@ -103,7 +103,7 @@ class Factory
     }
 
     /**
-     * Parse path according to alias.
+     * Returns the path according to the alias.
      * 
      * @param string $path
      * @return string
