@@ -29,25 +29,22 @@ class View
     protected $sections;
 
     /**
-     * @var string
+     * 
+     * @var callable
      * */
-    protected $basepath;
+    protected $factory;
 
     /**
      * @param string $filename
      * @param ArrayObject|array $data
-     * @param string|null $basepath
-     * @param string|null $extension
      * @return void
      * */
     
-    public function __construct ($filename, $data = [], $basepath = null)
+    public function __construct ($filename, $data = [])
     {
         $this->setFilename($filename);
 
         $this->resolveDataValue($data);
-
-        $basepath && $this->setPath($basepath);
 
         $this->setSectionCollection(new SectionCollection);
 
@@ -64,14 +61,18 @@ class View
 
     /**
      * @param PHPLegends\View\Data $data
-     * @return void
+     * @return self
      * */
     public function setData(\ArrayObject $data)
     {
         $this->data = $data;
+
+        return $this;
     }
 
     /**
+     *
+     * 
      * @param \ArrayObject | array $data
      * @throws \InvalidArgumentException
      * @return void
@@ -88,17 +89,28 @@ class View
             return $this->setData(new \ArrayObject($data));
         }
 
-        throw new \InvalidArgumentException("Data must be ArrayObject or array value");
+        throw new \InvalidArgumentException(
+            "Data must be ArrayObject or array value"
+        );
     }
 
     /**
     * Set filename for view
+    * 
     * @param string $filename
     * @return \PHPLegends\Legendary\View
+    * @throws \UnexpectedValueException
     */
     public function setFilename($filename)
     {
-        $this->name = $filename;
+
+        if (! file_exists($filename)) {
+            throw new \UnexpectedValueException(
+                "The file '$filename' doesn't not exists"
+            );
+        }
+
+        $this->filename = $filename;
 
         return $this;
     }
@@ -109,32 +121,13 @@ class View
     */
     public function getFilename()
     {
-        return $this->name;
+        return $this->filename;
     }
 
     /**
-     * Gets the real filename
+     * Get view renderized
+     *
      * @return string
-     * */
-    public function buildFilename()
-    {
-        $filename = $this->getFilename();
-
-        $basepath = $this->getBasepath();
-
-        $basepath && $filename = $basepath . '/' . $filename;
-        
-        if (! file_exists($filename))
-        {   
-            throw new \RuntimeException("file '$filename' doesn't exists");
-        }
-
-        return $filename;
-    }
-
-    /**
-    * Get view renderized
-    * @return string
     */
     public function render()
     {
@@ -144,11 +137,11 @@ class View
 
             extract($this->getData()->getArrayCopy());
 
-            require $this->buildFilename();
+            require $this->getFilename();
 
             if ($this->parentView) {
 
-                require $this->parentView->buildFilename();
+                require $this->parentView->getFilename();
             }
 
         } catch (\Exception $e) {
@@ -231,24 +224,26 @@ class View
     /**
     * Sets a new collection of section in current view
     * @param \PHPLegends\Legendary\SectionCollection $sections
-    * @return void
+    * @return self
     */
     public function setSectionCollection(SectionCollection $sections)
     {
         $this->sections = $sections;
+
+        return $this;
     }
 
     /**
     * Extends the current view with a parent view. The data too is shared.
-    * @param string $filename
-    * @param array $data
+    * 
+    * 
     * @return void
     */
-    public function extend($filename, $data = [], $basepath = null)
+    public function extend()
     {
-        $basepath ?: $basepath = $this->basepath;
+        $this->parentView = $this->callFactory(func_get_args());
 
-        $this->parentView = new static($filename, $data, $basepath);
+        return $this->parentView;
     }
 
     /**
@@ -274,30 +269,6 @@ class View
     }
 
     /**
-     * Gets the value of path.
-     *
-     * @return string
-     */
-    public function getBasepath()
-    {
-        return $this->basepath;
-    }
-
-    /**
-     * Sets the value of path.
-     *
-     * @param string $basepath
-     *
-     * @return self
-     */
-    public function setPath($basepath)
-    {
-        $this->basepath = rtrim($basepath, '/');
-
-        return $this;
-    }
-
-    /**
      * Append in a section. If content is passed, section doesn't not use "blocks"
      * 
      * @param string $filename
@@ -309,6 +280,74 @@ class View
         $section = $this->sections->findOrCreate($filename);
 
         $content ? $section->appendContent($content) : $section->start();
+    }
+
+
+    /**
+     * Gets the factory of view
+     * 
+     * @return callable (Closure or __invoke implementation)
+     * */
+
+    public function getFactory()
+    {
+        if ($this->factory === null) {
+
+            $class = get_class($this);
+
+            $this->factory = function ($name, $data = []) use ($class) {
+                return new $class($name, $data);
+            };
+        }
+
+        return $this->factory;
+    }
+
+    public function setFactory($factory)
+    {
+        if (is_object($factory) && method_exists($factory, '__invoke'))
+        {
+            $this->factory = $factory;
+
+            return $this;
+        }
+
+        throw new \InvalidArgumentException(
+            "The factory must be a object with implementention of __invoke "
+        );
+    }
+
+    /**
+     * 
+     * @param array $arguments
+     * @return PHPLegends\View\View
+     * */
+    public function callFactory(array $arguments)
+    {
+        $result = call_user_func_array($this->getFactory(), $arguments);
+
+        if (! $result instanceof self) {
+
+            $message = sprintf(
+                'The factory must be return "%s" instance, "%s" given',
+                get_class($this),
+                is_object($result) ? get_class($result) : gettype($result)
+            );
+
+            throw new \UnexpectedValueException($message);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Include a view in 
+     * 
+     * @param ... $arguments
+     * */
+    public function load()
+    {
+        return $this->callFactory(func_get_args());
     }
 
 }
