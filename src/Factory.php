@@ -70,7 +70,13 @@ class Factory
         return $this->create($view, $data);
     }
 
-
+    /**
+     * Set an alias path
+     * 
+     * @param string $alias
+     * @param string $path
+     * @return self
+     * */
     public function setPathAlias($alias, $path)
     {
         $this->pathAliases[$alias] = $path;
@@ -78,6 +84,12 @@ class Factory
         return $this;
     }
 
+    /**
+     * Gets path alias
+     * 
+     * @param string $alias
+     * @return string
+     * */
     public function getPathAlias($alias)
     {
         if (! isset($this->pathAliases[$alias]))
@@ -90,6 +102,12 @@ class Factory
         return $this->pathAliases[$alias];
     }
 
+    /**
+     * Parse path according to alias.
+     * 
+     * @param string $path
+     * @return string
+     * */
     protected function parsePathAlias($path)
     {
         if (strpos($path, ':') === false)
