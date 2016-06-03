@@ -9,7 +9,7 @@ class View
 {
 
     /**
-     * @var \ArrayObject
+     * @var array
      * */
     protected $data;
 
@@ -21,7 +21,7 @@ class View
     /**
      * @var \PHPLegends\View\View
      * */
-    protected $parentView;
+    protected $parent;
 
     /**
      * @var \PHPLegends\View\SectionCollection
@@ -37,22 +37,22 @@ class View
     /**
      * @param string $filename
      * @param ArrayObject|array $data
+     * @param FactoryInterface | null $factory
      * @return void
      * */
     
-    public function __construct ($filename, $data = [])
+    public function __construct ($filename, $data = [], Context $context = null)
     {
         $this->setFilename($filename);
 
         $this->resolveDataValue($data);
 
-        $this->setSectionCollection(new SectionCollection);
-
+        $this->context = $context;
     }
 
     /**
     * Get data passed to view
-    * @return \ArrayObject
+    * @return array
     */
     public function getData()
     {
@@ -60,10 +60,10 @@ class View
     }
 
     /**
-     * @param PHPLegends\View\Data $data
+     * @param array $data
      * @return self
      * */
-    public function setData(\ArrayObject $data)
+    public function setData(array $data)
     {
         $this->data = $data;
 
@@ -82,11 +82,11 @@ class View
     {
         if ($data instanceof \ArrayObject) {
 
-            return $this->setData($data);
+            return $this->setData($data->getArrayCopy());
 
         } elseif (is_array($data)) {
 
-            return $this->setData(new \ArrayObject($data));
+            return $this->setData($data);
         }
 
         throw new \InvalidArgumentException(
@@ -103,13 +103,6 @@ class View
     */
     public function setFilename($filename)
     {
-
-        if (! file_exists($filename)) {
-            throw new \UnexpectedValueException(
-                "The file '$filename' doesn't not exists"
-            );
-        }
-
         $this->filename = $filename;
 
         return $this;
@@ -135,13 +128,13 @@ class View
 
         try {
 
-            extract($this->getData()->getArrayCopy());
+            extract($this->getData());
 
             require $this->getFilename();
 
-            if ($this->parentView) {
+            if ($this->parent) {
 
-                require $this->parentView->getFilename();
+                require $this->getParent()->getFilename();
             }
 
         } catch (\Exception $e) {
@@ -152,6 +145,7 @@ class View
         return ltrim(ob_get_clean());
 
     }
+
 
     /**
     * Starts a section. If content is passed, section doesn't not use "blocks"
@@ -234,19 +228,6 @@ class View
     }
 
     /**
-    * Extends the current view with a parent view. The data too is shared.
-    * 
-    * 
-    * @return void
-    */
-    public function extend()
-    {
-        $this->parentView = $this->callFactory(func_get_args());
-
-        return $this->parentView;
-    }
-
-    /**
     * Handles the Exception
     * @todo Guilherme, me ajude a melhorar o handler aqui :D
     * @return void
@@ -282,72 +263,46 @@ class View
         $content ? $section->appendContent($content) : $section->start();
     }
 
-
     /**
-     * Gets the factory of view
      * 
-     * @return callable (Closure or __invoke implementation)
+     * @param PHPLegends\View\View $view
+     * @return self
      * */
 
-    public function getFactory()
+    public function setParent(self $view)
     {
-        if ($this->factory === null) {
+        $this->parent = $view;
 
-            $class = get_class($this);
-
-            $this->factory = function ($name, $data = []) use ($class) {
-                return new $class($name, $data);
-            };
-        }
-
-        return $this->factory;
+        return $this;
     }
 
-    public function setFactory($factory)
+    public function getParent()
     {
-        if (is_object($factory) && method_exists($factory, '__invoke'))
-        {
-            $this->factory = $factory;
-
-            return $this;
-        }
-
-        throw new \InvalidArgumentException(
-            "The factory must be a object with implementention of __invoke "
-        );
+        return $this->parent;
     }
 
     /**
      * 
-     * @param array $arguments
-     * @return PHPLegends\View\View
+     * @param string $filename
+     * @return boolean
+     * @throws \UnexpectedValueException
+     * 
      * */
-    public function callFactory(array $arguments)
+
+    protected function assertFileExists($filename)
     {
-        $result = call_user_func_array($this->getFactory(), $arguments);
-
-        if (! $result instanceof self) {
-
-            $message = sprintf(
-                'The factory must be return "%s" instance, "%s" given',
-                get_class($this),
-                is_object($result) ? get_class($result) : gettype($result)
+        if (! file_exists($filename)) {
+            throw new \UnexpectedValueException(
+                "The file '$filename' doesn't not exists"
             );
-
-            throw new \UnexpectedValueException($message);
         }
 
-        return $result;
+        return true;
     }
 
-    /**
-     * Include a view in 
-     * 
-     * @param ... $arguments
-     * */
-    public function load()
+    public function extend()
     {
-        return $this->callFactory(func_get_args());
+
     }
 
 }

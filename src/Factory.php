@@ -2,7 +2,7 @@
 
 namespace PHPLegends\View;
 
-class Factory
+class Factory implements FactoryInterface
 {
     /**
      * 
@@ -44,11 +44,11 @@ class Factory
      * */
     public function create($view, $data = [])
     {
-        $instance = new View($this->buildFilename($view), $data);
+        $view = new View($this->buildFilename($view), $data);
 
-        $instance->setFactory($this);
+        $view->setSectionCollection(new SectionCollection);
 
-        return $instance;
+        return $view;
     }
 
     /**
@@ -67,18 +67,6 @@ class Factory
         }
 
         return $filename;
-    }
-
-    /**
-     * Creates a view instance
-     * 
-     * @param string $view
-     * @param array $data
-     * @return PHPLegends\View\View
-     * */
-    public function __invoke($view, $data = [])
-    {
-        return $this->create($view, $data);
     }
 
     /**
@@ -129,5 +117,77 @@ class Factory
         list($alias, $end) = explode(':', $path, 2);
 
         return $this->getPathAlias($alias) . '/' . ltrim($end, '/');
+    }
+
+    /**
+     * Gets the value of basepath.
+     *
+     * @return string
+     */
+    public function getBasepath()
+    {
+        return $this->basepath;
+    }
+
+    /**
+     * Sets the value of basepath.
+     *
+     * @param string $basepath the basepath
+     *
+     * @return self
+     */
+    public function setBasepath($basepath)
+    {
+        $this->basepath = $basepath;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of extension.
+     *
+     * @return string
+     */
+    public function getExtension()
+    {
+        return $this->extension;
+    }
+
+    /**
+     * Sets the value of extension.
+     *
+     * @param string $extension the extension
+     *
+     * @return self
+     */
+    public function setExtension($extension)
+    {
+        $this->extension = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of pathAliases.
+     *
+     * @return array
+     */
+    public function getPathAliases()
+    {
+        return $this->pathAliases;
+    }
+
+    /**
+     * Sets the value of pathAliases.
+     *
+     * @param array $pathAliases the path aliases
+     *
+     * @return self
+     */
+    public function setPathAliases(array $pathAliases)
+    {
+        $this->pathAliases = $pathAliases;
+
+        return $this;
     }
 }

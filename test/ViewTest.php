@@ -8,17 +8,9 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
     protected function view($name, $data = [])
     {   
-        $factory = function ($name, $data = []) use(&$factory) {
+        $factory = new Factory(__DIR__ . '/views', 'phtml');
 
-            $view = new View(__DIR__ . '/views/' . $name, $data);
-
-            $view->setFactory($factory);
-
-            return $view;
-
-        };
-
-        return $factory($name, $data);
+        return $factory->create($name, $data);
     }
 
     public function testViewAndData()
