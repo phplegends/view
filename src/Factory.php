@@ -4,14 +4,21 @@ namespace PHPLegends\View;
 
 class Factory
 {
-
+    /**
+     * 
+     * @var string
+     * */
     protected $basepath;
 
+    /**
+     * 
+     * @var string
+    */
     protected $extension;
 
     /**
      * 
-     * 
+     * @var string
      * */
     protected $pathAliases = [];
 
@@ -37,7 +44,11 @@ class Factory
      * */
     public function create($view, $data = [])
     {
-        return new View($this->buildFilename($view), $data);
+        $instance = new View($this->buildFilename($view), $data);
+
+        $instance->setFactory($this);
+
+        return $instance;
     }
 
     /**
