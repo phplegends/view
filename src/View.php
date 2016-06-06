@@ -5,7 +5,8 @@ namespace PHPLegends\View;
 /**
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 */
-class View
+
+class View implements \ArrayAccess
 {
 
     /**
@@ -19,25 +20,15 @@ class View
     protected $filename;
 
     /**
-     * @var \PHPLegends\View\View
-     * */
-    protected $parent;
-
-    /**
-     * @var \PHPLegends\View\SectionCollection
-     * */
-    protected $sections;
-
-    /**
      * 
-     * @var callable
+     * @var Context
      * */
-    protected $factory;
+    protected $context;
 
     /**
      * @param string $filename
-     * @param ArrayObject|array $data
-     * @param FactoryInterface | null $factory
+     * @param array $data
+     * @param Context|null $context 
      * @return void
      * */
     
@@ -52,6 +43,7 @@ class View
 
     /**
     * Get data passed to view
+    * 
     * @return array
     */
     public function getData()
@@ -60,10 +52,11 @@ class View
     }
 
     /**
+     * 
      * @param array $data
      * @return self
      * */
-    public function setData(array $data)
+    public function setData(Data $data)
     {
         $this->data = $data;
 
@@ -71,7 +64,6 @@ class View
     }
 
     /**
-     *
      * 
      * @param \ArrayObject | array $data
      * @throws \InvalidArgumentException
@@ -80,17 +72,17 @@ class View
 
     public function resolveDataValue($data)
     {
-        if ($data instanceof \ArrayObject) {
+        if ($data instanceof Data) {
 
-            return $this->setData($data->getArrayCopy());
+            return $this->setData($data);
 
         } elseif (is_array($data)) {
 
-            return $this->setData($data);
+            return $this->setData(new Data($data));
         }
 
         throw new \InvalidArgumentException(
-            "Data must be ArrayObject or array value"
+            "Data must be View\Data or array value"
         );
     }
 
@@ -124,107 +116,55 @@ class View
     */
     public function render()
     {
-        ob_start();
 
         try {
-
-            extract($this->getData());
-
-            require $this->getFilename();
-
-            if ($this->parent) {
-
-                require $this->getParent()->getFilename();
-            }
+            
+            return $this->getContents();
 
         } catch (\Exception $e) {
 
             return $this->handleException($e);
         }
 
+    }
+
+    public function getContents()
+    {
+        ob_start();
+
+        $callback = $this->hasContext() ? $this->getClosureForContextRender() : $this->callContextRender();
+
+        call_user_func($callback, $this->getFilename(), $this->getData()->toArray());
+
         return ltrim(ob_get_clean());
 
     }
 
-
-    /**
-    * Starts a section. If content is passed, section doesn't not use "blocks"
-    * @param string $filename
-    * @return void
-    */
-    public function startSection($filename, $content = null)
+    protected function getClosureForRender()
     {
-        $section = new Section($filename);
+        return function ($filename, $data) {
+            
+            extract(func_get_arg(1));
 
-        $this->sections->attach($section);
-
-        $content ? $section->setContent($content) : $section->start();
-
+            require func_get_arg(0);
+        };
     }
 
-    /**
-    * Alias for startSection
-    * @param string $filename
-    * @param string $default
-    * @return string
-    */
-    public function section($filename, $content = null)
+    protected function getClosureForContextRender()
     {
-        return $this->startSection($filename, $content);
-    }
+        $callback = function ($filename, $data) {
+            
+            extract(func_get_arg(1));
 
-    /**
-    * Ends a section
-    * @return void
-    */
-    public function endSection()
-    {
-        $section = $this->sections->last();
+            require func_get_arg(0);
 
-        if (! $section) {
+            if ($this->getParentView()) {
 
-            throw new \RuntimeException('closeSection called without start a section');
-        }
+                require $this->getParentView()->getFilename();
+            }
+        };
 
-        $section->end();
-    }
-    
-    /**
-    * Gives the value of a initialized section
-    * @param string $filename
-    * @param string $default
-    * @return string
-    */
-    public function getSection($filename, $default = '')
-    {
-
-        if ($this->sections->has($filename)) {
-
-            return $this->sections->get($filename);
-        }
-
-        return $default;
-    }
-
-    /**
-    * Gets the collection of sections
-    * @return \PHPLegends\Legendary\SectionCollection
-    */
-    public function getSectionCollection()
-    {
-        return $this->sections;
-    }
-
-    /**
-    * Sets a new collection of section in current view
-    * @param \PHPLegends\Legendary\SectionCollection $sections
-    * @return self
-    */
-    public function setSectionCollection(SectionCollection $sections)
-    {
-        $this->sections = $sections;
-
-        return $this;
+        return $callback->bindTo($this->getContext());
     }
 
     /**
@@ -249,60 +189,34 @@ class View
         return $this->render();
     }
 
-    /**
-     * Append in a section. If content is passed, section doesn't not use "blocks"
-     * 
-     * @param string $filename
-     * @param string|null $content
-     * @return void
-     * */
-    public function appendSection($filename, $content = null)
+    public function getContext()
     {
-        $section = $this->sections->findOrCreate($filename);
-
-        $content ? $section->appendContent($content) : $section->start();
+        return $this->context;
     }
 
-    /**
-     * 
-     * @param PHPLegends\View\View $view
-     * @return self
-     * */
-
-    public function setParent(self $view)
+    public function hasContext()
     {
-        $this->parent = $view;
-
-        return $this;
+        return $this->getContext() !== null;
     }
 
-    public function getParent()
+    public function offsetSet($key, $value)
     {
-        return $this->parent;
+        $this->getData()->set($key, $value);
     }
 
-    /**
-     * 
-     * @param string $filename
-     * @return boolean
-     * @throws \UnexpectedValueException
-     * 
-     * */
-
-    protected function assertFileExists($filename)
+    public function offsetGet($key)
     {
-        if (! file_exists($filename)) {
-            throw new \UnexpectedValueException(
-                "The file '$filename' doesn't not exists"
-            );
-        }
-
-        return true;
+        return $this->getData()->getOrDefault($key);
     }
 
-    public function extend()
+    public function offsetExists($key)
     {
+        return $this->getData()->has($key);
+    }
 
+    public function offsetUnset($key)
+    {
+        $this->getData()->delete($key);
     }
 
 }
