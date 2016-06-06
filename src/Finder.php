@@ -7,32 +7,32 @@ use PHPLegends\View\Exceptions\ViewNotFoundException;
 
 class Finder implements FinderInterface
 {
-	protected $pathAliases = [];
+    protected $pathAliases = [];
 
-	protected $extensions;
+    protected $extensions;
 
-	protected $defaultPath;
+    protected $defaultPath;
 
-	public function __construct(array $extensions = [], $defaultPath = null)
-	{
-		$this->extensions = new Collection;
+    public function __construct(array $extensions = [], $defaultPath = null)
+    {
+        $this->extensions = new Collection;
 
         $this->addExtensions($extensions);
 
         $this->defaultPath = $defaultPath;
 
-	}
+    }
 
-	public function find($name)
-	{
-		$data = $this->getPossibleFiles($name)->first(function ($data) {
-			return file_exists($data['filename']);
-		});
+    public function find($name)
+    {
+        $data = $this->getPossibleFiles($name)->first(function ($data) {
+            return file_exists($data['filename']);
+        });
 
-		if ($data === null) {
-			
-			throw new ViewNotFoundException(sprintf('View "%s" not found', $name));
-		}
+        if ($data === null) {
+            
+            throw new ViewNotFoundException(sprintf('View "%s" not found', $name));
+        }
 
         extract($data);
 
@@ -43,8 +43,8 @@ class Finder implements FinderInterface
             $filename = $preprocessor->getFilename();
         }
 
-		return $filename;
-	}
+        return $filename;
+    }
 
     /**
      * Gets the value of pathAliases.
@@ -78,10 +78,10 @@ class Finder implements FinderInterface
      */
     public function getPathAlias($alias)
     {
-    	if (! isset($this->pathAliases[$alias]))
-    	{
-    		throw new \InvalidArgumentException("Alias \"{$alias}\" is not defined");
-    	}
+        if (! isset($this->pathAliases[$alias]))
+        {
+            throw new \InvalidArgumentException("Alias \"{$alias}\" is not defined");
+        }
 
         return $this->pathAliases[$alias];
     }
@@ -102,14 +102,14 @@ class Finder implements FinderInterface
 
     protected function getPartOfPathByAlias($path)
     {
-    	if (strpos($path, ':') === false)
-    	{
-    		return $this->getDefaultPath() . '/' . $path;
-    	}
+        if (strpos($path, ':') === false)
+        {
+            return $this->getDefaultPath() . '/' . $path;
+        }
 
-    	list($alias, $end) = explode(':', $path, 2);
+        list($alias, $end) = explode(':', $path, 2);
 
-    	return $this->getPathAlias($alias) . '/' . $end;
+        return $this->getPathAlias($alias) . '/' . $end;
     }
 
     /**
@@ -120,15 +120,15 @@ class Finder implements FinderInterface
      * */
     public function getPossibleFiles($path)
     {
-    	$path = $this->getPartOfPathByAlias($path);
+        $path = $this->getPartOfPathByAlias($path);
 
-    	return $this->extensions->map(function ($preprocessor, $extension) use($path) {
+        return $this->extensions->map(function ($preprocessor, $extension) use($path) {
 
-    		$filename = $path . '.' . $extension;
+            $filename = $path . '.' . $extension;
 
             return compact('filename', 'preprocessor');
 
-    	});
+        });
     }
 
     /**
@@ -145,9 +145,9 @@ class Finder implements FinderInterface
             throw new \InvalidArgumentException("{$preprocessor} must be implement PHPLegends\\View\\PreProcessorInterface");
         }   
 
-    	$this->extensions[$extension] = $preprocessor;
+        $this->extensions[$extension] = $preprocessor;
 
-    	return $this;
+        return $this;
     }
 
     public function addExtensions(array $data)
@@ -171,7 +171,7 @@ class Finder implements FinderInterface
      * */
     public function getExtensions()
     {
-    	return $this->extensions;
+        return $this->extensions;
     }
 
     /**
@@ -182,14 +182,14 @@ class Finder implements FinderInterface
      * */
     public function setDefaultPath($path)
     {
-    	$this->defaultPath = $path;
+        $this->defaultPath = $path;
 
-    	return $this;
+        return $this;
     }
 
     public function getDefaultPath()
     {
-    	return $this->defaultPath;
+        return $this->defaultPath;
     }
 
 }
