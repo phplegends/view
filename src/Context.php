@@ -5,30 +5,30 @@ namespace PHPLegends\View;
 class Context
 {
 
-	protected $factory;
+    protected $factory;
 
-	protected $parentView;
+    protected $parentView;
 
-	protected $sections;
+    protected $sections;
 
-	public function __construct(FactoryInterface $factory)
-	{
-		$this->factory = $factory;
-	}
-	/**
-	 * Sets the parent view
-	 * 
-	 * @param View $view
-	 * @return self
-	 * */
-	public function setParentView(View $view)
-	{
-		$this->parentView = $view;
+    public function __construct(FactoryInterface $factory)
+    {
+        $this->factory = $factory;
+    }
+    /**
+     * Sets the parent view
+     * 
+     * @param View $view
+     * @return self
+     * */
+    public function setParentView(View $view)
+    {
+        $this->parentView = $view;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
+    /**
      * Gets the value of parentView.
      *
      * @return mixed
@@ -38,118 +38,118 @@ class Context
         return $this->parentView;
     }
 
-	/**
-	 * 
-	 * @param string $name
-	 * @param array $data
-	 * @return self
-	 * */
-	public function extend($name, $data = [])
-	{
-		$parent = $this->factory->create($name, $data);
+    /**
+     * 
+     * @param string $name
+     * @param array $data
+     * @return self
+     * */
+    public function extend($name, $data = [])
+    {
+        $parent = $this->factory->create($name, $data);
 
-		return $this->setParentView($parent);
-	}
+        return $this->setParentView($parent);
+    }
 
 
-	/**
-	* Starts a section. If content is passed, section doesn't not use "blocks"
-	* 
-	* @param string $filename
-	* @param string|null $content
-	* @return void
-	*/
-	public function startSection($filename, $content = null)
-	{
-	    $section = new Section($filename);
+    /**
+    * Starts a section. If content is passed, section doesn't not use "blocks"
+    * 
+    * @param string $filename
+    * @param string|null $content
+    * @return void
+    */
+    public function startSection($filename, $content = null)
+    {
+        $section = new Section($filename);
 
-	    $this->getSectionCollection()->attach($section);
+        $this->getSectionCollection()->attach($section);
 
-	    $content ? $section->setContent($content) : $section->start();
+        $content ? $section->setContent($content) : $section->start();
 
-	    return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Alias for startSection
-	 * 
-	 * @param string $filename
-	 * @param string $default
-	 * @return self
-	*/
-	public function section($filename, $content = null)
-	{
-	    return $this->startSection($filename, $content);
-	}
+    /**
+     * Alias for startSection
+     * 
+     * @param string $filename
+     * @param string $default
+     * @return self
+    */
+    public function section($filename, $content = null)
+    {
+        return $this->startSection($filename, $content);
+    }
 
-	/**
-	* Ends a section
-	* 
-	* @return void
-	*/
-	public function endSection()
-	{
-	    $section = $this->getSectionCollection()->last();
+    /**
+    * Ends a section
+    * 
+    * @return void
+    */
+    public function endSection()
+    {
+        $section = $this->getSectionCollection()->last();
 
-	    if (! $section) {
+        if (! $section) {
 
-	        throw new \RuntimeException('closeSection called without start a section');
-	    }
+            throw new \RuntimeException('closeSection called without start a section');
+        }
 
-	    $section->end();
-	}
+        $section->end();
+    }
 
-	/**
-	 * Append in a section. If content is passed, section doesn't not use "blocks"
-	 * 
-	 * @param string $filename
-	 * @param string|null $content
-	 * @return void
-	 * */
-	public function appendSection($filename, $content = null)
-	{
-	    $section = $this->getSectionCollection()->findOrCreate($filename);
+    /**
+     * Append in a section. If content is passed, section doesn't not use "blocks"
+     * 
+     * @param string $filename
+     * @param string|null $content
+     * @return void
+     * */
+    public function appendSection($filename, $content = null)
+    {
+        $section = $this->getSectionCollection()->findOrCreate($filename);
 
-	    $content ? $section->appendContent($content) : $section->start();
-	}
+        $content ? $section->appendContent($content) : $section->start();
+    }
 
-	/**
-	* Gives the value of a initialized section
-	* @param string $filename
-	* @param string $default
-	* @return string
-	*/
-	public function getSection($name, $default = '')
-	{
+    /**
+    * Gives the value of a initialized section
+    * @param string $filename
+    * @param string $default
+    * @return string
+    */
+    public function getSection($name, $default = '')
+    {
 
-	    if ($this->getSectionCollection()->has($name)) {
+        if ($this->getSectionCollection()->has($name)) {
 
-	        return $this->getSectionCollection()->get($name);
-	    }
+            return $this->getSectionCollection()->get($name);
+        }
 
-	    return $default;
-	}
+        return $default;
+    }
 
-	/**
-	* Gets the collection of sections
-	* @return \PHPLegends\Legendary\SectionCollection
-	*/
-	public function getSectionCollection()
-	{
-	    return $this->sections ?: $this->sections = new SectionCollection;
-	}
+    /**
+    * Gets the collection of sections
+    * @return \PHPLegends\Legendary\SectionCollection
+    */
+    public function getSectionCollection()
+    {
+        return $this->sections ?: $this->sections = new SectionCollection;
+    }
 
-	/**
-	* Sets a new collection of section in current view
-	* @param \PHPLegends\Legendary\SectionCollection $sections
-	* @return self
-	*/
-	public function setSectionCollection(SectionCollection $sections)
-	{
-	    $this->sections = $sections;
+    /**
+    * Sets a new collection of section in current view
+    * @param \PHPLegends\Legendary\SectionCollection $sections
+    * @return self
+    */
+    public function setSectionCollection(SectionCollection $sections)
+    {
+        $this->sections = $sections;
 
-	    return $this;
-	}
+        return $this;
+    }
 
     /**
      * Gets the value of factory.

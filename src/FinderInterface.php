@@ -5,54 +5,54 @@ namespace PHPLegends\View;
 interface FinderInterface
 {
 
-	/**
-	 * 
-	 * @param string $view
-	 * @return string
-	 * @throws PHPLegends\Views\Exceptions\ViewNotFoundException
-	 * */
-	public function find($view);
+    /**
+     * 
+     * @param string $view
+     * @return string
+     * @throws PHPLegends\Views\Exceptions\ViewNotFoundException
+     * */
+    public function find($view);
 
-	/**
-	 * 
-	 * @param string $name
-	 * @param string $path
-	 * */
-	public function setPathAlias($name, $path);
+    /**
+     * 
+     * @param string $name
+     * @param string $path
+     * */
+    public function setPathAlias($name, $path);
 
-	/**
-	 * 
-	 * @param string $name
-	 * @return string
-	 * @throws \InvalidArgumentException
-	 * */
-	public function getPathAlias($name);
+    /**
+     * 
+     * @param string $name
+     * @return string
+     * @throws \InvalidArgumentException
+     * */
+    public function getPathAlias($name);
 
-	/**
-	 * 
-	 * @param string $name
-	 * @param string|null $preprocessor
-	 * */
-	public function addExtension($extension, $preprocessor = null);
+    /**
+     * 
+     * @param string $name
+     * @param string|null $preprocessor
+     * */
+    public function addExtension($extension, $preprocessor = null);
 
-	/**
-	 * 
-	 * @return array
-	 * */
+    /**
+     * 
+     * @return array
+     * */
 
-	public function getExtensions();
+    public function getExtensions();
 
-	/**
-	 * 
-	 * @param string $path
-	 * */
+    /**
+     * 
+     * @param string $path
+     * */
 
-	public function setDefaultPath($path);
+    public function setDefaultPath($path);
 
-	/**
-	 * @return string
-	 * */
+    /**
+     * @return string
+     * */
 
-	public function getDefaultPath();
+    public function getDefaultPath();
 
 }
