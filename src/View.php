@@ -199,21 +199,38 @@ class View implements \ArrayAccess
         return $this->getContext() !== null;
     }
 
+    /**
+     * 
+     * @param string $key
+     * @param mixed $value
+     * */
     public function offsetSet($key, $value)
     {
         $this->getData()->set($key, $value);
     }
 
+    /**
+     * 
+     * @param string $key
+     * */
     public function offsetGet($key)
     {
         return $this->getData()->getOrDefault($key);
     }
 
+    /**
+     * 
+     * @param string $key
+     * */
     public function offsetExists($key)
     {
         return $this->getData()->has($key);
     }
 
+    /**
+     * 
+     * @param string $key
+     * */
     public function offsetUnset($key)
     {
         $this->getData()->delete($key);
