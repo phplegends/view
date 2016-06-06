@@ -5,20 +5,38 @@ namespace PHPLegends\View;
 class Context
 {
 
+    /**
+     * 
+     * @var \PHPLegends\View\Factory
+     * */
     protected $factory;
 
+    /**
+     * 
+     * @var \HPLegends\View\View | null
+     * */
     protected $parentView;
 
+    /**
+     * 
+     * @var \PHPLegends\View\SectionCollection
+     * */
     protected $sections;
+    
+    /**
+     * 
+     * @param PHPLegends\View\FactoryInterface
+     * */
 
     public function __construct(FactoryInterface $factory)
     {
         $this->factory = $factory;
     }
+
     /**
      * Sets the parent view
      * 
-     * @param View $view
+     * @param \PHPLegends\View\View $view
      * @return self
      * */
     public function setParentView(View $view)
@@ -31,7 +49,7 @@ class Context
     /**
      * Gets the value of parentView.
      *
-     * @return mixed
+     * @return \PHPLegends\View\
      */
     public function getParentView()
     {
@@ -131,8 +149,9 @@ class Context
     }
 
     /**
-    * Gets the collection of sections
-    * @return \PHPLegends\Legendary\SectionCollection
+     * Gets the collection of sections
+     *
+     * @return \PHPLegends\Legendary\SectionCollection
     */
     public function getSectionCollection()
     {
@@ -140,9 +159,9 @@ class Context
     }
 
     /**
-    * Sets a new collection of section in current view
-    * @param \PHPLegends\Legendary\SectionCollection $sections
-    * @return self
+     * Sets a new collection of section in current view
+     * @param \PHPLegends\Legendary\SectionCollection $sections
+     * @return self
     */
     public function setSectionCollection(SectionCollection $sections)
     {
@@ -154,7 +173,7 @@ class Context
     /**
      * Gets the value of factory.
      *
-     * @return PHPLegends\View\FactoryInterface
+     * @return \PHPLegends\View\FactoryInterface
      */
     public function getFactory()
     {
@@ -165,7 +184,7 @@ class Context
     /**
      * Sets the value of factory.
      *
-     * @param FactoryInterface $factory the factory
+     * @param \PHPLegends\View\FactoryInterface $factory the factory
      *
      * @return self
      */
