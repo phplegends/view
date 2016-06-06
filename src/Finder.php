@@ -5,14 +5,40 @@ namespace PHPLegends\View;
 use PHPLegends\Collections\Collection;
 use PHPLegends\View\Exceptions\ViewNotFoundException;
 
+/**
+ * 
+ * This class is resposable to find views by extension
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * 
+ * */
 class Finder implements FinderInterface
 {
+    /**
+     * 
+     * @var array
+     * */
     protected $pathAliases = [];
 
+    /**
+     * 
+     * @var PHPLegends\Collections\Collection
+     * */
     protected $extensions;
 
+    /**
+     * 
+     * @var string
+     * */
     protected $defaultPath;
 
+    /**
+     * 
+     * 
+     * @param array $extensios
+     * @param string $defaultPath
+     * 
+    */
     public function __construct(array $extensions = [], $defaultPath = null)
     {
         $this->extensions = new Collection;
@@ -23,6 +49,9 @@ class Finder implements FinderInterface
 
     }
 
+    /**
+     * @{inheritdoc}
+     * */
     public function find($name)
     {
         $data = $this->getPossibleFiles($name)->first(function ($data) {
@@ -167,7 +196,7 @@ class Finder implements FinderInterface
 
     /**
      * 
-     * @return Collection
+     * @return PHPLegends\Collections\Collection
      * */
     public function getExtensions()
     {
@@ -175,7 +204,7 @@ class Finder implements FinderInterface
     }
 
     /**
-     * 
+     * Sets the value for default path
      * 
      * @param string $path
      * @return self
@@ -187,6 +216,11 @@ class Finder implements FinderInterface
         return $this;
     }
 
+    /**
+     * Gets value for default path
+     * 
+     * @return string
+     * */
     public function getDefaultPath()
     {
         return $this->defaultPath;

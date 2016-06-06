@@ -2,6 +2,12 @@
 
 namespace PHPLegends\View;
 
+/**
+ * Factory Interface for views
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ *
+*/
 interface FactoryInterface
 {
     /**
