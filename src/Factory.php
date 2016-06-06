@@ -2,37 +2,38 @@
 
 namespace PHPLegends\View;
 
+/**
+ * Create a factory for views
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * 
+ * */
+
 class Factory implements FactoryInterface
-{
+{   
+
     /**
-     * 
-     * @var string
+     * @var PHPLegends\View\FinderInterface
      * */
-    protected $basepath;
+    protected $finder;
 
     /**
      * 
-     * @var string
-    */
-    protected $extension;
+     * @var PHPLegends\View\Data
+     * */
+    protected $data;
 
     /**
      * 
-     * @var string
-     * */
-    protected $pathAliases = [];
-
-    /**
-     * Constructor
+     * @param PHPLegends\View\FinderInterface $finder
+     * @param PHPLegends\View\Data | null $data
      * 
-     * @param string $basepath
-     * @param string $extension
      * */
-    public function __construct($basepath, $extension = 'php')
+    public function __construct(FinderInterface $finder, Data $data = null)
     {
-        $this->basepath = $basepath;
+        $this->finder = $finder;
 
-        $this->extension = $extension;
+        $this->data = $data;
     }
 
     /**
@@ -44,150 +45,45 @@ class Factory implements FactoryInterface
      * */
     public function create($view, $data = [])
     {
-        $view = new View($this->buildFilename($view), $data);
+        $filename = $this->getFinder()->find($view);
 
-        $view->setSectionCollection(new SectionCollection);
+        $this->getData()->merge($data);
 
-        return $view;
-    }
+        return new View($filename, $this->getData(), new Context($this));
+    }   
 
     /**
-     * Build the filename of view
      * 
-     * @param string $view
-     * @return string
+     * @return PHPLegends\View\Finder
      * */
-    protected function buildFilename($view)
+    public function getFinder()
     {
-        $filename = $this->parsePathAlias($view) . '.' . $this->extension;
-
-        if ($this->basepath)
-        {
-            $filename = $this->basepath . '/' . $filename;
-        }
-
-        return $filename;
+        return $this->finder;
     }
 
     /**
-     * Set an alias path
      * 
-     * @param string $alias
-     * @param string $path
+     * @return PHPLegends\View\Data
+     * 
+     * */
+    public function getData()
+    {
+        return $this->data ?: $this->data = new Data();
+    }
+
+    /**
+     * 
+     * @param string $name
+     * @param string $value
      * @return self
      * */
-    public function setPathAlias($alias, $path)
+    public function share($name, $value)
     {
-        $this->pathAliases[$alias] = $path;
+        $this->getData()->set($name, $value);
 
         return $this;
     }
 
-    /**
-     * Gets path alias
-     * 
-     * @param string $alias
-     * @return string
-     * */
-    public function getPathAlias($alias)
-    {
-        if (! isset($this->pathAliases[$alias]))
-        {
-            throw new \InvalidArgumentException(
-                "The alias '$alias' is not defined"
-            );
-        }
+        
 
-        return $this->pathAliases[$alias];
-    }
-
-    /**
-     * Returns the path according to the alias.
-     * 
-     * @param string $path
-     * @return string
-     * */
-    protected function parsePathAlias($path)
-    {
-        if (strpos($path, ':') === false)
-        {
-            return $path;
-        }
-
-        list($alias, $end) = explode(':', $path, 2);
-
-        return $this->getPathAlias($alias) . '/' . ltrim($end, '/');
-    }
-
-    /**
-     * Gets the value of basepath.
-     *
-     * @return string
-     */
-    public function getBasepath()
-    {
-        return $this->basepath;
-    }
-
-    /**
-     * Sets the value of basepath.
-     *
-     * @param string $basepath the basepath
-     *
-     * @return self
-     */
-    public function setBasepath($basepath)
-    {
-        $this->basepath = $basepath;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of extension.
-     *
-     * @return string
-     */
-    public function getExtension()
-    {
-        return $this->extension;
-    }
-
-    /**
-     * Sets the value of extension.
-     *
-     * @param string $extension the extension
-     *
-     * @return self
-     */
-    public function setExtension($extension)
-    {
-        $this->extension = $extension;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of pathAliases.
-     *
-     * @return array
-     */
-    public function getPathAliases()
-    {
-        return $this->pathAliases;
-    }
-
-    /**
-     * Sets the value of pathAliases.
-     *
-     * @param array $pathAliases the path aliases
-     *
-     * @return self
-     */
-    public function setPathAliases(array $pathAliases)
-    {
-        $this->pathAliases = $pathAliases;
-
-        return $this;
-    }
 }
