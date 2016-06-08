@@ -67,9 +67,11 @@ class Finder implements FinderInterface
 
         if ($preprocessor)  {
 
-            $preprocessor = new $preprocessor($filename);
+            $preprocessor->setInputFilename($filename);
 
-            $filename = $preprocessor->getFilename();
+            $preprocessor->run();
+
+            $filename = $preprocessor->getOutputFilename();
         }
 
         return $filename;
@@ -163,10 +165,10 @@ class Finder implements FinderInterface
     /**
      * 
      * @param string $extension
-     * @param string $preprocessor
+     * @param PreProcessor $preprocessor
      * @return self
      * */
-    public function addExtension($extension, $preprocessor = null)
+    public function addExtension($extension, PreprocessorInterface $preprocessor = null)
     {
 
         if (! $this->isValidPreProcessorValue($preprocessor))
