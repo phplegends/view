@@ -11,8 +11,9 @@ class SectionCollection extends Collection
 {
 
     /**
-    * @param string $name
-    * @return \PHPLegends\Legendary\Section
+     * 
+     * @param string $name
+     * @return \PHPLegends\Legendary\Section
     */
 
     public function findOrCreate($name)
@@ -22,8 +23,6 @@ class SectionCollection extends Collection
         if (! $section) {
 
             $this->attach($section = new Section($name));
-
-            return $section;
         }
 
         return $section;
