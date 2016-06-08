@@ -57,6 +57,16 @@ class Context
     }
 
     /**
+     * Has parent view?
+     * 
+     * @return boolean
+     * */
+    public function hasParentView()
+    {
+        return isset($this->parentView);
+    }
+
+    /**
      * 
      * @param string $name
      * @param array $data
