@@ -35,7 +35,7 @@ class Section
     /**
     * Defines the name of section
     * @param string $name
-    * @return \PHPLegends\Legendary\Section
+    * @return \PHPLegends\View\Section
     */
     public function setName($name)
     {
@@ -54,8 +54,10 @@ class Section
     }
 
     /**
-    * @param string $content
-    * @return \PHPLegends\Legendary\Section
+     * 
+     * @param string $content
+     * 
+     * @return \PHPLegends\View\Section
     */
     public function setContent($content)
     {
@@ -67,7 +69,7 @@ class Section
     /**
     * Appends string in current section
     * @param string $content
-    * @return \PHPLegends\Legendary\Section
+    * @return \PHPLegends\View\Section
     */
     public function appendContent($content)
     {
@@ -91,7 +93,7 @@ class Section
     */
     public function start()
     {
-        if (! $this->closed)
+        if (! $this->isClosed())
         {
             throw new \RuntimeException("The section {$this->name} already started.");
         }
@@ -107,7 +109,7 @@ class Section
     */
     public function end()
     {
-        if ($this->closed)
+        if ($this->isClosed())
         {
             throw new \RuntimeException("The section {$this->name} already closed.");
         }
@@ -118,8 +120,9 @@ class Section
     }
 
     /**
-    * Returns the static::getContents()
-    * @return \PHPLegends\Legendary\Section
+     * Returns the static::getContents()
+     * 
+     * @return \PHPLegends\View\Section
     */
     public function __toString()
     {
@@ -128,10 +131,20 @@ class Section
 
     public function __destruct()
     {
-        if (! $this->closed)
+        if (! $this->isClosed())
         {
             throw new \RuntimeException("The section {$this->name} must be closed");
         }
+    }
+
+    /**
+     * Check if is closed
+     * 
+     * @return boolean
+     * */
+    public function isClosed()
+    {
+        return $this->closed;
     }
 
 }
