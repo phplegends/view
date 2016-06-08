@@ -67,9 +67,11 @@ class Finder implements FinderInterface
 
         if ($preprocessor)  {
 
-            $preprocessor = new $preprocessor($filename);
+            $preprocessor = new $preprocessor();
 
-            $filename = $preprocessor->getFilename();
+            $preprocessor->setInputFilename($filename);
+
+            $filename = $preprocessor->getOutputFilename();
         }
 
         return $filename;
