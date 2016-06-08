@@ -49,9 +49,16 @@ class Data extends Collection
      * @param string $key
      * @param mixed $value
      * @return self
+     * @throws \UnexpectedValueException
      * */
     public function define($key, $value)
     {
+
+        if ($this->isProtected($key)) {
+
+            throw new \UnexpectedValueException("Cannot delete protected '$key' item");
+        }
+
         parent::set($key, $value);
 
         $this->protect($key);
@@ -70,7 +77,7 @@ class Data extends Collection
     {
         if ($this->isProtected($key)) {
 
-            throw new \RunTimeException("Cannot delete protected '$key' item");
+            throw new \UnexpectedValueException("Cannot delete protected '$key' item");
         }
 
         return parent::delete($key);
@@ -82,12 +89,13 @@ class Data extends Collection
      * @param string $key
      * @param mixed $value
      * @return self
+     * @throws \UnexpectedValueException
      * */
     public function set($key, $value)
     {
         if ($this->isProtected($key)) {
 
-            throw new \RunTimeException("Cannot set value in protected '$key' item");
+            throw new \UnexpectedValueException("Cannot set value in protected '$key' item");
         }
 
         return parent::set($key, $value);
@@ -130,7 +138,7 @@ class Data extends Collection
      * 
      * @param array $data
      * @return void
-     * @throws \RunTimeException
+     * @throws \UnexpectedValueException
      * */
     protected function checkForProtected(array $data)
     {
@@ -138,7 +146,7 @@ class Data extends Collection
 
             if ($this->isProtected($key)) {
 
-                throw new \RunTimeException("Cannot set value in protected '$key' index");
+                throw new \UnexpectedValueException("Cannot set value in protected '$key' index");
             }
         }
     }
