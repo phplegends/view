@@ -52,6 +52,7 @@ class View implements \ArrayAccess
     }
 
     /**
+     * Sets the Data
      * 
      * @param array $data
      * @return self
@@ -64,8 +65,9 @@ class View implements \ArrayAccess
     }
 
     /**
+     * Resolves value for data
      * 
-     * @param \ArrayObject | array $data
+     * @param  \PHPLegends\View\Data | array $data
      * @throws \InvalidArgumentException
      * @return void
      * */
@@ -101,8 +103,9 @@ class View implements \ArrayAccess
     }
 
     /**
-    * Get filename used by current view
-    * @return string
+     * Gets filename used by current view
+     * 
+     * @return string
     */
     public function getFilename()
     {
@@ -128,6 +131,11 @@ class View implements \ArrayAccess
 
     }
 
+    /**
+     * Get the contents of View
+     * 
+     * @return string
+     * */
     public function getContents()
     {
         ob_start();
@@ -140,6 +148,11 @@ class View implements \ArrayAccess
 
     }
 
+    /**
+     * 
+     * @return \Closure
+     * 
+     * */
     protected function getClosureForRender()
     {
         return function ($filename, $data) {
@@ -150,6 +163,10 @@ class View implements \ArrayAccess
         };
     }
 
+    /**
+     * 
+     * @return \Closure
+     * */
     protected function getClosureForContextRender()
     {
         $callback = function ($filename, $data) {
@@ -169,6 +186,7 @@ class View implements \ArrayAccess
 
     /**
     * Handles the Exception
+    * s
     * @todo Guilherme, me ajude a melhorar o handler aqui :D
     * @return void
     */
@@ -189,11 +207,21 @@ class View implements \ArrayAccess
         return $this->render();
     }
 
+    /**
+     * 
+     * @return PHPLegends\View\Context | null
+     * */
     public function getContext()
     {
         return $this->context;
     }
 
+    /**
+     * Checks if view has context
+     * 
+     * @return boolean
+     * 
+     * */
     public function hasContext()
     {
         return $this->getContext() !== null;
