@@ -170,17 +170,17 @@ class Finder implements FinderInterface
      * */
     public function addExtension($extension, PreprocessorInterface $preprocessor = null)
     {
-
-        if (! $this->isValidPreProcessorValue($preprocessor))
-        {
-            throw new \InvalidArgumentException("{$preprocessor} must be implement PHPLegends\\View\\PreProcessorInterface");
-        }   
-
         $this->extensions[$extension] = $preprocessor;
 
         return $this;
     }
 
+    /**
+     * 
+     * Add extensions via array
+     * 
+     * @param array $data
+     * */
     public function addExtensions(array $data)
     {
         foreach ($data as $extension => $preprocessor) {
@@ -189,11 +189,6 @@ class Finder implements FinderInterface
         }
 
         return $this;
-    }
-
-    protected function isValidPreProcessorValue($class)
-    {
-        return $class === null || is_subclass_of($class, 'PHPLegends\\View\\PreProcessorInterface', true);
     }
 
     /**
