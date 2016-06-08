@@ -208,8 +208,9 @@ class View implements \ArrayAccess
     }
 
     /**
+     * Gets the context or null
      * 
-     * @return PHPLegends\View\Context | null
+     * @return \PHPLegends\View\Context | null
      * */
     public function getContext()
     {
