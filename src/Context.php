@@ -21,7 +21,7 @@ class Context
      * 
      * @var \PHPLegends\View\SectionCollection
      * */
-    protected $sections;
+    protected $sectionCollection;
     
     /**
      * 
@@ -49,7 +49,7 @@ class Context
     /**
      * Gets the value of parentView.
      *
-     * @return \PHPLegends\View\
+     * @return \PHPLegends\View\View
      */
     public function getParentView()
     {
@@ -132,10 +132,11 @@ class Context
     }
 
     /**
-    * Gives the value of a initialized section
-    * @param string $filename
-    * @param string $default
-    * @return string
+     * Gives the value of a initialized section
+     * 
+     * @param string $filename
+     * @param string $default
+     * @return string
     */
     public function getSection($name, $default = '')
     {
@@ -155,17 +156,18 @@ class Context
     */
     public function getSectionCollection()
     {
-        return $this->sections ?: $this->sections = new SectionCollection;
+        return $this->sectionCollection ?: $this->sectionCollection = new SectionCollection;
     }
 
     /**
      * Sets a new collection of section in current view
+     * 
      * @param \PHPLegends\Legendary\SectionCollection $sections
      * @return self
     */
-    public function setSectionCollection(SectionCollection $sections)
+    public function setSectionCollection(SectionCollection $sectionCollection)
     {
-        $this->sections = $sections;
+        $this->sectionCollection = $sectionCollection;
 
         return $this;
     }
@@ -179,7 +181,6 @@ class Context
     {
         return $this->factory;
     }
-
 
     /**
      * Sets the value of factory.

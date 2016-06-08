@@ -35,4 +35,11 @@ class DataTest extends PHPUnit_Framework_TestCase
 		$this->assertTrue($data->isProtected('name'));
 
 	}
+
+	public function testFromEmpty()
+	{
+		$data = new Data;
+
+		$data->define('__name__', 'protected name');
+	}
 }

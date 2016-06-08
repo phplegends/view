@@ -97,15 +97,18 @@ class Data extends Collection
      * Overwrites merge method. Check if procteded are added
      * 
      * 
-     * @param array $data
+     * @param array $items
      * @param boolean $recursive
      * @return self
      * */
-    public function merge(array $data, $recursive = false)
+    public function merge(array $items, $recursive = false)
     {
-        $this->checkForProtected($data);
+        foreach ($items as $key => $value)
+        {
+            $this->set($key, $value);
+        }
 
-        return parent::merge($data, $recursive);
+        return $this;
     }
 
     /**

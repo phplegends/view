@@ -66,7 +66,7 @@ class Finder implements FinderInterface
         extract($data);
 
         if ($preprocessor)  {
-
+            
             $preprocessor->setInputFilename($filename);
 
             $preprocessor->run();

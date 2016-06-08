@@ -53,6 +53,7 @@ class Factory implements FactoryInterface
     }   
 
     /**
+     * Gets the finder
      * 
      * @return PHPLegends\View\Finder
      * */
@@ -62,9 +63,9 @@ class Factory implements FactoryInterface
     }
 
     /**
+     * Gets the Data
      * 
      * @return PHPLegends\View\Data
-     * 
      * */
     public function getData()
     {
@@ -74,7 +75,7 @@ class Factory implements FactoryInterface
     /**
      * 
      * @param string $name
-     * @param string $value
+     * @param mixed $value
      * @return self
      * */
     public function share($name, $value)
@@ -84,6 +85,32 @@ class Factory implements FactoryInterface
         return $this;
     }
 
-        
 
+    /**
+     * Sets the value of finder.
+     *
+     * @param PHPLegends\View\FinderInterface $finder the finder
+     *
+     * @return self
+     */
+    protected function setFinder(FinderInterface $finder)
+    {
+        $this->finder = $finder;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of data.
+     *
+     * @param PHPLegends\View\Data $data the data
+     *
+     * @return self
+     */
+    public function setData(Data $data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
 }
