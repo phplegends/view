@@ -4,5 +4,24 @@ namespace PHPLegends\View;
 
 interface PreprocessorInterface
 {	
-	public function getFilename();
+
+    /**
+     * 
+     * @return string
+     * */
+	public function getOutputFilename();
+
+    /**
+     * 
+     * 
+     * @param string $filename
+     * @return self
+     * */
+    public function setInputFilename($filename);
+
+    /**
+     * Run the preprocessor
+     * 
+     * */
+    public function run();
 }
