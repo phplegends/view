@@ -109,12 +109,23 @@ class Finder implements FinderInterface
      */
     public function getPathAlias($alias)
     {
-        if (! isset($this->pathAliases[$alias]))
-        {
+        if (! $this->hasPathAlias($alias)) {
+
             throw new \InvalidArgumentException("Alias \"{$alias}\" is not defined");
         }
 
         return $this->pathAliases[$alias];
+    }
+
+    /**
+     * 
+     * 
+     * @param string $alias
+     * @return boolean
+     * */
+    public function hasPathAlias($alias)
+    {
+        return array_key_exists($alias, $this->pathAliases);
     }
 
     /**
