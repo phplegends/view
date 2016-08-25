@@ -2,4 +2,5 @@ vendor
 serve
 view.sublime-project
 composer.lock
+view.sublime-project
 view.sublime-workspace

@@ -79,7 +79,6 @@ class Context
         return $this->setParentView($parent);
     }
 
-
     /**
     * Starts a section. If content is passed, section doesn't not use "blocks"
     * 
