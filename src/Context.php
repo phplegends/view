@@ -129,13 +129,13 @@ class Context
     /**
      * Append in a section. If content is passed, section doesn't not use "blocks"
      * 
-     * @param string $filename
+     * @param string $name
      * @param string|null $content
      * @return void
      * */
-    public function appendSection($filename, $content = null)
+    public function appendSection($name, $content = null)
     {
-        $section = $this->getSectionCollection()->findOrCreate($filename);
+        $section = $this->getSectionCollection()->findOrCreate($name);
 
         $content ? $section->appendContent($content) : $section->start();
     }
@@ -143,7 +143,7 @@ class Context
     /**
      * Gives the value of a initialized section
      * 
-     * @param string $filename
+     * @param string $name
      * @param string $default
      * @return string
     */
@@ -203,5 +203,25 @@ class Context
         $this->factory = $factory;
 
         return $this;
+    }
+
+    /**
+     * Create a view in current context. Is useful for create view inside another.
+     * 
+     * @param string $view
+     * @param array
+     * 
+     * */
+    public function include($view, $data = [])
+    {    
+        $factory = $this->getFactory();
+
+        $filename = $factory->getFinder()->find($view);
+
+        $context = new static($factory);
+
+        $context->setSectionCollection($this->getSectionCollection());
+
+        return new View($filename, $data, $context);
     }
 }
