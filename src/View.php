@@ -10,7 +10,7 @@ class View implements \ArrayAccess
 {
 
     /**
-     * @var array
+     * @var PHPLegends\View\Data
      * */
     protected $data;
 
@@ -27,7 +27,7 @@ class View implements \ArrayAccess
 
     /**
      * @param string $filename
-     * @param array $data
+     * @param array| PHPLegends\View\Data $data
      * @param Context|null $context 
      * @return void
      * */
@@ -44,7 +44,7 @@ class View implements \ArrayAccess
     /**
     * Get data passed to view
     * 
-    * @return array
+    * @return PHPLegends\View\Data
     */
     public function getData()
     {
@@ -54,7 +54,7 @@ class View implements \ArrayAccess
     /**
      * Sets the Data
      * 
-     * @param array $data
+     * @param PHPLegends\View\Data $data
      * @return self
      * */
     public function setData(Data $data)

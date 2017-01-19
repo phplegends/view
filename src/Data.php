@@ -56,7 +56,7 @@ class Data extends Collection
 
         if ($this->isProtected($key)) {
 
-            throw new \UnexpectedValueException("Cannot delete protected '$key' item");
+            throw new \UnexpectedValueException("Cannot re-assing protected '$key' item");
         }
 
         parent::set($key, $value);
