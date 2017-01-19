@@ -40,14 +40,16 @@ class Factory implements FactoryInterface
      * Creates a view
      * 
      * @param string $view 
-     * @param array $data
+     * @param array | PHPLegends\View\Data $data
      * @return PHPLegends\View\View
      * */
     public function create($view, $data = [])
     {
         $filename = $this->getFinder()->find($view);
 
-        $this->getData()->merge($data);
+        $mergeMethod = ($data instanceof Data) ? 'addAll' : 'merge';
+
+        $this->getData()->$mergeMethod($data);
 
         return new View($filename, $this->getData(), new Context($this));
     }   
@@ -73,6 +75,7 @@ class Factory implements FactoryInterface
     }
 
     /**
+     * Define an value in Factory Data instance. This is value will be shared with all created views
      * 
      * @param string $name
      * @param mixed $value
