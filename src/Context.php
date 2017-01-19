@@ -212,7 +212,7 @@ class Context
      * @param array
      * 
      * */
-    public function include($view, $data = [])
+    public function includes($view, $data = [])
     {    
         $factory = $this->getFactory();
 
