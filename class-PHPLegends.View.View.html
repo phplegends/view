@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class PHPLegends\View\View</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-PHPLegends.html">
+						PHPLegends<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-PHPLegends.View.html">
+						View<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-PHPLegends.View.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-PHPLegends.View.Context.html">Context</a></li>
+				<li><a href="class-PHPLegends.View.Data.html">Data</a></li>
+				<li><a href="class-PHPLegends.View.Factory.html">Factory</a></li>
+				<li><a href="class-PHPLegends.View.Finder.html">Finder</a></li>
+				<li><a href="class-PHPLegends.View.Section.html">Section</a></li>
+				<li><a href="class-PHPLegends.View.SectionCollection.html">SectionCollection</a></li>
+				<li class="active"><a href="class-PHPLegends.View.View.html">View</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-PHPLegends.View.FactoryInterface.html">FactoryInterface</a></li>
+				<li><a href="class-PHPLegends.View.FinderInterface.html">FinderInterface</a></li>
+				<li><a href="class-PHPLegends.View.PreprocessorInterface.html">PreprocessorInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-PHPLegends.View.html" title="Summary of PHPLegends\View"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class View</h1>
+
+
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>PHPLegends\View\View</span></b>			
+			 implements 
+<span>ArrayAccess</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-PHPLegends.html">PHPLegends</a>\<a href="namespace-PHPLegends.View.html">View</a><br>
+		
+
+				<b>Author:</b>
+				Wallace de Souza Vizerra <a href="&#x6d;&#97;&#105;l&#x74;&#x6f;&#58;&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;">&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-PHPLegends.View.View.html#6-268" title="Go to source code">View.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#29-42" title="Go to source code">__construct</a>( <span>string <var>$filename</var></span>, <span>array| <var>$data</var> = []</span>, <span><code><a href="class-PHPLegends.View.Context.html">PHPLegends\View\Context</a></code> <var>$context</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filename</var></dt>
+					<dd></dd>
+					<dt><var>$data</var></dt>
+					<dd>$data</dd>
+					<dt><var>$context</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getData" id="_getData">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PHPLegends.View.Data.html">PHPLegends\View\Data</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getData">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#44-52" title="Go to source code">getData</a>( )</code>
+
+		<div class="description short">
+			<p>Get data passed to view</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get data passed to view</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-PHPLegends.View.Data.html">PHPLegends\View\Data</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setData" id="_setData">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PHPLegends.View.View.html">PHPLegends\View\View</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setData">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#54-65" title="Go to source code">setData</a>( <span><code><a href="class-PHPLegends.View.Data.html">PHPLegends\View\Data</a></code> <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the Data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the Data</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-PHPLegends.View.View.html">PHPLegends\View\View</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resolveDataValue" id="_resolveDataValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resolveDataValue">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#68-89" title="Go to source code">resolveDataValue</a>( <span><code><a href="class-PHPLegends.View.Data.html">PHPLegends\View\Data</a></code> <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>Resolves value for data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Resolves value for data</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>array $data</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setFilename" id="_setFilename">
+
+		<td class="attributes"><code>
+			 public 
+
+			PHPLegends\Legendary\View
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setFilename">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#91-103" title="Go to source code">setFilename</a>( <span>string <var>$filename</var></span> )</code>
+
+		<div class="description short">
+			<p>Set filename for view</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set filename for view</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filename</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					PHPLegends\Legendary\View
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					UnexpectedValueException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFilename" id="_getFilename">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFilename">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#105-113" title="Go to source code">getFilename</a>( )</code>
+
+		<div class="description short">
+			<p>Gets filename used by current view</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets filename used by current view</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="render" id="_render">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_render">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#115-132" title="Go to source code">render</a>( )</code>
+
+		<div class="description short">
+			<p>Get view renderized</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get view renderized</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getContents" id="_getContents">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getContents">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#134-149" title="Go to source code">getContents</a>( )</code>
+
+		<div class="description short">
+			<p>Get the contents of View</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the contents of View</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClosureForRender" id="_getClosureForRender">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Closure
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClosureForRender">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#151-164" title="Go to source code">getClosureForRender</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					Closure
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClosureForContextRender" id="_getClosureForContextRender">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Closure
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClosureForContextRender">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#166-185" title="Go to source code">getClosureForContextRender</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					Closure
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleException" id="_handleException">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleException">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#187-198" title="Go to source code">handleException</a>( <span>Exception <var>$exception</var></span> )</code>
+
+		<div class="description short">
+			<p>Handles the Exception
+s</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Handles the Exception
+s</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__toString" id="___toString">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___toString">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#200-208" title="Go to source code">__toString</a>( )</code>
+
+		<div class="description short">
+			<p>returns strings using the method self::render()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>returns strings using the method self::render()</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getContext" id="_getContext">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PHPLegends.View.Context.html">PHPLegends\View\Context</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getContext">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#210-218" title="Go to source code">getContext</a>( )</code>
+
+		<div class="description short">
+			<p>Gets the context or null</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the context or null</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-PHPLegends.View.Context.html">PHPLegends\View\Context</a></code><br>| null
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasContext" id="_hasContext">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasContext">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#220-229" title="Go to source code">hasContext</a>( )</code>
+
+		<div class="description short">
+			<p>Checks if view has context</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Checks if view has context</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#231-239" title="Go to source code">offsetSet</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#241-248" title="Go to source code">offsetGet</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#250-257" title="Go to source code">offsetExists</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-PHPLegends.View.View.html#259-266" title="Go to source code">offsetUnset</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="data" id="$data">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-PHPLegends.View.Data.html">PHPLegends\View\Data</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PHPLegends.View.View.html#12-15" title="Go to source code"><var>$data</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$data" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="filename" id="$filename">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PHPLegends.View.View.html#17-20" title="Go to source code"><var>$filename</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$filename" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="context" id="$context">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-PHPLegends.View.Context.html">PHPLegends\View\Context</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PHPLegends.View.View.html#22-26" title="Go to source code"><var>$context</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$context" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
