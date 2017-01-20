@@ -153,3 +153,53 @@ Alguns métodos de `Context` são:
 * appendSection   - Adiciona um techo numa "section" existente
 * includes        - Inclui uma view parcial dentro da view atual.
 * extend          - Invoca o layout principal para uma view
+
+
+#Passando dados para a View
+
+Para passar uma variável para uma `View`, você precisa definir um `array` com os índices desejados, para que sejam acessíveis como variáveis no seu template.
+
+Veja um exemplo:
+
+```php
+
+$view = $factory->create('home/hello', ['autor' => 'Wallace de Souza']);
+
+echo $view;
+
+```
+
+Com a seguinte definição abaixo...
+
+```html
+<div>Meu nome é <?php echo $autor ?></div>
+```
+
+... você terá o seguinte resultado:
+
+```html
+<div>Meu nome é Wallace de Souza</div>
+```
+
+#Definindo valores Globais
+
+
+Você pode desejar compartilhar um determinado valor global com todas as views que você utilizar.
+
+Existe uma maneira muito simples de fazer isso, que é utilizando o método `Factory::share`.
+
+Veja:
+
+```php
+
+  $factory->share('OBJECT', new stdClass);
+
+  $view1 = $factory->create('home/hello');
+  $view2 = $factory->create('home/support');
+
+  echo $view1;
+  echo $view2;
+
+```
+
+No exemplo acima, todas as `views` (inclusive as views pais) teriam acessível dentro dos seus escopos a variável `$OBJECT`.
