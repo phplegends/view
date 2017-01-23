@@ -35,4 +35,5 @@ class SectionTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($this->section->isClosed());
     }
+
 }
