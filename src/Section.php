@@ -10,13 +10,15 @@ namespace PHPLegends\View;
 class Section
 {   
     /**
-    * Contents of Section
-    * @var string
+     * Contents of Section
+     * 
+     * @var string
     */
     protected $content = '';
 
     /**
-    * @var boolean
+     * @deprecated since 2017-01-23. Use "counter === 0" insteadof
+     * @var boolean
     */
     protected $closed = true;
 
@@ -24,6 +26,12 @@ class Section
      * @var string
     */
     protected $name;
+
+    /**
+     * 
+     * @var int
+     * */
+    protected $counter = 0;
 
     /**
     * @param string $name
@@ -46,8 +54,9 @@ class Section
     }
 
     /**
-    * Returns the name of section
-    * @return string
+     * Returns the name of section
+     * 
+     * @return string
     */
     public function getName()
     {
@@ -55,9 +64,9 @@ class Section
     }
 
     /**
+     * Sets the content
      * 
      * @param string $content
-     * 
      * @return \PHPLegends\View\Section
     */
     public function setContent($content)
@@ -68,9 +77,10 @@ class Section
     }
 
     /**
-    * Appends string in current section
-    * @param string $content
-    * @return \PHPLegends\View\Section
+     * Appends string in current section
+     * 
+     * @param string $content
+     * @return \PHPLegends\View\Section
     */
     public function appendContent($content)
     {
@@ -89,35 +99,42 @@ class Section
     }
 
     /**
-    * Starts the output buffer capturing in current section]
-    * @return void
+     * Starts the output buffer capturing in current section
+     * 
+     * @return void
     */
     public function start()
     {
-        if (! $this->isClosed())
-        {
-            throw new \RuntimeException("The section {$this->name} already started.");
-        }
-
         ob_start();
 
-        $this->closed = false;    
+        $this->counter++;   
+
+        /**
+         * @deprecated
+         * */
+        $this->closed = $this->isClosed(); 
     }
 
     /**
-    * Close the output buffer capturing
-    * @return void
+     * Close the output buffer capturing
+     *
+     * @return void
     */
     public function end()
     {
-        if ($this->isClosed())
+        if ($this->getCounter() === 0)
         {
             throw new \RuntimeException("The section {$this->name} already closed.");
         }
 
         $this->appendContent(ob_get_clean());
 
-        $this->closed = true;
+        $this->counter--;
+
+        /**
+         * @deprecated
+        */
+        $this->closed = $this->isClosed();
     }
 
     /**
@@ -130,9 +147,13 @@ class Section
         return $this->getContent();
     }
 
+    /**
+     *
+     * @throws RunTimeException on not completely closed section
+     * */
     public function __destruct()
     {
-        if (! $this->isClosed())
+        if ($this->getCounter() > 0)
         {
             throw new \RuntimeException("The section {$this->name} must be closed");
         }
@@ -141,11 +162,21 @@ class Section
     /**
      * Check if is closed
      * 
+     * @deprecated since 2017-01-23. Use "static::getCounter() === 0" instead of
      * @return boolean
      * */
     public function isClosed()
     {
-        return $this->closed;
+        return $this->counter === 0;
     }
 
+    /**
+     * Returns the number of times the session was started.
+     * 
+     * @return int
+     * */
+    public function getCounter()
+    {
+        return $this->counter;
+    }
 }
