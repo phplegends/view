@@ -25,6 +25,12 @@ class Section
     protected $name;
 
     /**
+     * 
+     * @var int 
+     * */
+    protected $counter = 0;
+
+    /**
     * @param string $name
     */
     public function __construct($name)
@@ -93,14 +99,12 @@ class Section
     */
     public function start()
     {
-        if (! $this->isClosed())
-        {
-            throw new \RuntimeException("The section {$this->name} already started.");
-        }
-
         ob_start();
 
-        $this->closed = false;    
+        $this->counter++;
+
+        $this->closed = ($this->counter === 0);
+
     }
 
     /**
@@ -116,7 +120,9 @@ class Section
 
         $this->appendContent(ob_get_clean());
 
-        $this->closed = true;
+        $this->counter--;
+
+        $this->closed = ($this->counter === 0);
     }
 
     /**

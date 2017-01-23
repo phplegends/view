@@ -116,7 +116,9 @@ class Context
     */
     public function endSection()
     {
-        $section = $this->getSectionCollection()->last();
+        $section = $this->getSectionCollection()->last(function ($section) {
+            return ! $section->isClosed();
+        });
 
         if (! $section) {
 
