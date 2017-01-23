@@ -3,12 +3,10 @@
 namespace PHPLegends\View;
 
 /**
- * Create a factory for views
+ * Creates a Factory for Views.
  * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- * 
  * */
-
 class Factory implements FactoryInterface
 {   
 

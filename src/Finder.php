@@ -6,11 +6,9 @@ use PHPLegends\Collections\Collection;
 use PHPLegends\View\Exceptions\ViewNotFoundException;
 
 /**
- * 
- * This class is resposable to find views by extension
+ * This class represents a Finder. Through it, you can define an extension and assign a preprocessor, or a default folder for views.
  * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- * 
  * */
 class Finder implements FinderInterface
 {

@@ -5,7 +5,9 @@ namespace PHPLegends\View;
 use PHPLegends\Collections\Collection;
 
 /**
-* @author Wallace de Souza vizerra <wallacemaxters@gmail.com>
+ * Collection of view sections
+ * 
+ * @author Wallace de Souza vizerra <wallacemaxters@gmail.com>
 */
 class SectionCollection extends Collection
 {

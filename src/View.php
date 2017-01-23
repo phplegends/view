@@ -3,9 +3,10 @@
 namespace PHPLegends\View;
 
 /**
-* @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * Represents the view.
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 */
-
 class View implements \ArrayAccess
 {
 

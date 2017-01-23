@@ -2,6 +2,12 @@
 
 namespace PHPLegends\View;
 
+/**
+ * The classe represents the context of View.
+ * The $this variable used in view is this Context class
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * */
 class Context
 {
 

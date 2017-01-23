@@ -3,9 +3,10 @@
 namespace PHPLegends\View;
 
 /**
-* @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * The section of view.
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 */
-
 class Section
 {   
     /**

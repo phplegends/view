@@ -2,6 +2,11 @@
 
 namespace PHPLegends\View;
 
+/**
+ * Finder interface for views
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * */
 interface FinderInterface
 {
 

@@ -5,11 +5,9 @@ namespace PHPLegends\View;
 use PHPLegends\Collections\Collection;
 
 /**
- * 
  * Represents the view data
  * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- * 
  * */
 class Data extends Collection
 {   

@@ -2,6 +2,11 @@
 
 namespace PHPLegends\View;
 
+/**
+ * Interfaces to preprocess a view
+ * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * */
 interface PreprocessorInterface
 {	
     /**
