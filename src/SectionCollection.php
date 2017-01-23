@@ -2,6 +2,7 @@
 
 namespace PHPLegends\View;
 
+use PHPLegends\View\Section;
 use PHPLegends\Collections\Collection;
 
 /**
@@ -61,5 +62,19 @@ class SectionCollection extends Collection
         $this->delete($name);
 
         return $this;
+    }
+
+
+    /**
+     * Gets the last started section
+     * 
+     * @return PHPLegends\View\Section|null
+     * */
+
+    public function lastStarted()
+    {
+        return $this->last(function (Section $section) {
+            return ! $section->isClosed();
+        });
     }
 }
