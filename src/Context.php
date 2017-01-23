@@ -88,15 +88,14 @@ class Context
     /**
     * Starts a section. If content is passed, section doesn't not use "blocks"
     * 
-    * @param string $filename
+    * @param string $name
     * @param string|null $content
     * @return void
     */
-    public function startSection($filename, $content = null)
+    public function startSection($name, $content = null)
     {
-        $section = new Section($filename);
 
-        $this->getSectionCollection()->attach($section);
+        $section = $this->getSectionCollection()->findOrCreate($name);
 
         $content ? $section->setContent($content) : $section->start();
 
@@ -106,13 +105,13 @@ class Context
     /**
      * Alias for startSection
      * 
-     * @param string $filename
-     * @param string $default
+     * @param string $name
+     * @param string $content
      * @return self
     */
-    public function section($filename, $content = null)
+    public function section($name, $content = null)
     {
-        return $this->startSection($filename, $content);
+        return $this->startSection($name, $content);
     }
 
     /**
@@ -122,7 +121,7 @@ class Context
     */
     public function endSection()
     {
-        $section = $this->getSectionCollection()->last();
+        $section = $this->getSectionCollection()->lastStarted();
 
         if (! $section) {
 
