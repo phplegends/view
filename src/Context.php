@@ -92,9 +92,7 @@ class Context
 
         $this->getSectionCollection()->attach($section);
 
-        $content ? $section->setContent($content) : $section->start();
-
-        return $this;
+        $content ? $section->setContent($content) : $section->setContent('')->start();
     }
 
     /**
@@ -140,6 +138,8 @@ class Context
         $section = $this->getSectionCollection()->findOrCreate($name);
 
         $content ? $section->appendContent($content) : $section->start();
+
+        return $this;
     }
 
     /**
