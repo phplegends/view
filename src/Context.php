@@ -97,7 +97,7 @@ class Context
 
         $section = $this->getSectionCollection()->findOrCreate($name);
 
-        $content ? $section->setContent($content) : $section->start();
+        $content ? $section->setContent($content) : $section->setContent('')->start();
 
         return $this;
     }
